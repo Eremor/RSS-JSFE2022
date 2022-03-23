@@ -284,3 +284,123 @@ body {
 .about__text:last-child {
   margin-bottom: 0;
 }
+
+.friends {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  background-color: var(--color-light-l);
+}
+
+.friends__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.friends__title {
+  margin: 0;
+  margin-bottom: 59px;
+  padding: 0;
+  max-width: 400px;
+  text-align: center;
+}
+
+.friends__slider {
+  margin-bottom: 60px;
+}
+
+.slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.arrow {
+  display: block;
+  width: 52px;
+  height: 52px;
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+}
+
+.arrow--left {
+  background: url('../../assets/icons/Arrow.svg') center no-repeat;
+}
+
+.arrow--right {
+  background: url('../../assets/icons/Arrow.svg') center no-repeat;
+  transform: rotate(-180deg);
+}
+
+.slider__body {
+  display: flex;
+  /* overflow-x: hidden; */
+}
+
+.slider__item {
+  margin-right: 45px;
+  margin-left: 45px;
+}
+
+/* .slider__item:last-child {
+  margin-right: 0;
+} */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 9px;
+  cursor: pointer;
+  background-color: var(--color-light-s);
+}
+
+.card:hover {
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+
+.card__img {
+  margin-bottom: 30px;
+}
+
+.card__title {
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 0;
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.3rem;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: var(--color-dark-l);
+}
+
+.card__btn {
+  margin-bottom: 30px;
+  padding: 13px 43px;
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 1.7rem;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-3xl);
+}
+
+.friends__btn {
+  padding: 15px 45px;
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 1.7rem;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-3xl);
+}
