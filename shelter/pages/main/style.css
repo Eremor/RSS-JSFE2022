@@ -84,6 +84,15 @@ body {
   background-color: var(--color-primary-light);
 }
 
+.section-title {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 3.5rem;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-l);
+}
+
 .header {
   margin-top: 60px;
   width: 100%;
@@ -235,4 +244,43 @@ body {
 .only__image img {
   width: 100%;
   height: 100%;
+}
+
+.about {
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.about__wrapper {
+  padding: 0 175px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about__title {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 25px;
+  max-width: 370px;
+}
+
+.about__text {
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
+  max-width: 430px;
+  font-size: 1.5rem;
+  line-height: 160%;
+  color: var(--color-dark-xl);
+}
+
+.about__text:last-child {
+  margin-bottom: 0;
 }
