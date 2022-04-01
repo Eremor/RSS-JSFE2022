@@ -1,6 +1,7 @@
+@import '../../assets/fonts/arial/arial-font.css';
+@import '../../assets/fonts/georgia/georgia-font.css';
+
 :root {
-  --arial-font: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
-  --georgia-font: Georgia, "Charcoal CY", "Century Schoolbook L", serif;
   --start-gradient: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
   --footer-gradient: radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%);
 
@@ -431,6 +432,7 @@ body {
   &__list {
     margin: 0;
     padding: 0;
+    gap: 55px 120px;
     min-height: 281px;
     display: flex;
     justify-content: center;
@@ -440,8 +442,6 @@ body {
   }
 
   &__item {
-    margin-left: 60px;
-    margin-right: 60px;
     padding-top: 90px;
     font-family: Georgia, serif;
     font-weight: 400;
