@@ -199,11 +199,17 @@ body {
 .nav {
 
   @media screen and (max-width: 767px) {
+    display: none;
     position: absolute;
     top: -30px;
     right: -100%;
     background-color: var(--color-dark-3xl);
     z-index: 4;
+  }
+  
+  &--open {
+    right: 0;
+    display: flex;
   }
 
   &__list {

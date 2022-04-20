@@ -257,12 +257,20 @@ body {
 
 @media screen and (max-width: 767px) {
   .nav {
+    display: none;
     position: absolute;
     top: -30px;
     right: -100%;
     background-color: var(--color-light-xl);
     z-index: 4;
   }
+}
+
+.nav--open {
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .nav__list {
