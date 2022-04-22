@@ -2,9 +2,6 @@ export class Burger {
   constructor(navBar, burgerBtn) {
     this.navBar = navBar;
     this.burgerBtn = burgerBtn;
-
-    // this.burgerBtn.addEventListener('click', this.toggle);
-    // this.navBar.addEventListener('click', this.hideOnClick);
   }
 
   toggle = () => {
