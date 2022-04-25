@@ -560,23 +560,42 @@ body {
   }
 }
 
+.slide {
+  display: flex;
+}
+
 .slider {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-
+  
   @media screen and (max-width: 767px) {
     position: relative;
   }
-
+  
   &__body {
     display: flex;
+    flex-wrap: nowrap;
     overflow-x: hidden;
     max-width: 1079px;
 
     @media screen and (max-width: 1279px) {
       max-width: 580px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    position: relative;
+    left: -1080px;
+
+    @media screen and (max-width: 1279px) {
+      left: -620px;
+    }
+
+    @media screen and (max-width: 767px) {
+      left: -285px;
     }
   }
 
@@ -603,7 +622,7 @@ body {
   border-radius: 9px;
   cursor: pointer;
   background-color: var(--color-light-s);
-  transition: translate 1s;
+  transition: all 3s;
 
   &:hover {
     box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
@@ -1273,4 +1292,74 @@ body {
       background-color: var(--color-primary-light);
     }
   }
+}
+
+@media screen and (min-width: 1280px) {
+  @keyframes move-right {
+    from {
+      left: -1080px;
+    }
+    to {
+      left: -2160px;
+    }
+  }
+
+  @keyframes move-left {
+    from {
+      left: -1080px;
+    }
+    to {
+      left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  @keyframes move-right {
+    from {
+      left: -620px;
+    }
+    to {
+      left: -1240px;
+    }
+  }
+
+  @keyframes move-left {
+    from {
+      left: -620px;
+    }
+    to {
+      left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  @keyframes move-right {
+    from {
+      left: -285px;
+    }
+    to {
+      left: -570px;
+    }
+  }
+
+  @keyframes move-left {
+    from {
+      left: -285px;
+    }
+    to {
+      left: 0;
+    }
+  }
+}
+
+.transition-right {
+  animation-name: move-right;
+  animation-duration: 3s;
+}
+
+.transition-left {
+  animation-name: move-left;
+  animation-duration: 3s;
 }

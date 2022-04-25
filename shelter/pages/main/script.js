@@ -6,27 +6,18 @@ const burgerBtn = document.querySelector('.burger');
 const navBar = document.querySelector('.nav');
 const cardList = document.querySelectorAll('.card');
 const slider = document.querySelector('.slider');
-const sliderBody = slider.children[1];
+const leftBtn = slider.querySelector('.arrow--left');
+const rightBtn = slider.querySelector('.arrow--right');
+const carousel = slider.querySelector('.slider__wrapper');
+const sliderLeft = slider.querySelector('.slider__left');
+const sliderRight = slider.querySelector('.slider__right');
+const activeSlide = slider.querySelector('.slider__active');
 
-let currentPets = [];
+let randomPets = await pseudoRandom();
 
 const burger = new Burger(navBar, burgerBtn);
 
-const getOffset = () => {
-  let offsetX;
-
-  if(window.innerWidth >= 1280) {
-    offsetX = 1080;
-  } else if(window.innerWidth >= 768) {
-    offsetX = 4;
-  } else {
-    offsetX = 2;
-  }
-
-  return offsetX;
-}
-
-const getAmountCardsOnPage = () => {
+const getAmountCardsOnPage = (() => {
   let amountCards;
 
   if(window.innerWidth >= 1280) {
@@ -38,65 +29,63 @@ const getAmountCardsOnPage = () => {
   }
 
   return amountCards;
-}
+})();
 
-const amountCardsOnPage = getAmountCardsOnPage();
-
-const addPetToSlider = async () => {
-  
-  const petList = await getPets();
-  const pets = await pseudoRandom(petList, currentPets);
-
-  for(let i = 0; i < amountCardsOnPage; i++) {
-    const card = new Card(pets[i], 'slider__item').create();
-    sliderBody.append(card);
-    currentPets.push(pets[i])
+const createCards = (container) => {
+  for(let i = 0; i < getAmountCardsOnPage; i++) {
+    const card = new Card(randomPets[i], 'slider__item').create();
+    container.append(card);
+    randomPets.shift();
   }
 }
 
-addPetToSlider();
-
-let count = 1;
-const offsetX = getOffset();
-
-const moveToNext = async () => {
-  const petList = await getPets();
-  const pets = await pseudoRandom(petList, currentPets);
-
-  for(let i = 0; i < 3; i++) {
-    const card = new Card(pets[i], 'slider__item').create();
-    sliderBody.append(card);
-    currentPets.push(pets[i])
-    currentPets.shift();
-  }
-
-  const cards = document.querySelectorAll('.card');
-  cards.forEach(card => card.style.transform = `translateX(-${offsetX * count}px)`);
-  count++;
+const initialCard = () => {
+  createCards(sliderLeft);
+  createCards(activeSlide);
+  createCards(sliderRight);
 }
 
-const moveToPrev = async () => {
-  const petList = await getPets();
-  const pets = await pseudoRandom(petList, currentPets);
+initialCard();
 
-  for(let i = 0; i < 3; i++) {
-    const card = new Card(pets[i], 'slider__item').create();
-    sliderBody.prepend(card);
-    currentPets.push(pets[i]);
-    currentPets.pop();
-  }
+const moveLeft = () => {
+  carousel.classList.add('transition-left');
+  leftBtn.removeEventListener('click', moveLeft);
+  rightBtn.removeEventListener('click', moveRight);
 }
 
-const moveSlider = async (e) => {  
-  if(e.target.classList.contains('arrow--right')) {
-    await moveToNext();
+const moveRight = () => {
+  carousel.classList.add('transition-right');
+  leftBtn.removeEventListener('click', moveLeft);
+  rightBtn.removeEventListener('click', moveRight);
+}
+
+const handlerAnimation = async (e) => {
+  let changeItem;
+
+  if(e.animationName === 'move-left') {
+    carousel.classList.remove('transition-left');
+    changeItem = sliderLeft;
+    activeSlide.innerHTML = sliderLeft.innerHTML;
+  } else {
+    carousel.classList.remove('transition-right');
+    changeItem = sliderRight;
+    activeSlide.innerHTML = sliderRight.innerHTML;
   }
-  if(e.target.classList.contains('arrow--left')) {
-    await moveToPrev();
+
+  changeItem.innerHTML = '';
+  createCards(changeItem);
+
+  if(randomPets.length < getAmountCardsOnPage) {
+    randomPets = await pseudoRandom();
   }
+
+  leftBtn.addEventListener('click', moveLeft);
+  rightBtn.addEventListener('click', moveRight);
 }
 
 burgerBtn.addEventListener('click', burger.toggle);
 navBar.addEventListener('click', burger.hideOnClick);
 cardList.forEach((card) => card.addEventListener('click', showPopup));
-slider.addEventListener('click', moveSlider);
+leftBtn.addEventListener('click', moveLeft);
+rightBtn.addEventListener('click', moveRight);
+carousel.addEventListener('animationend', handlerAnimation);

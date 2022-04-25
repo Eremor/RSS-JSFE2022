@@ -24,11 +24,13 @@ export const showPopup = (e) => {
   }
 }
 
-export const pseudoRandom = async (pets, current) => {
+export const pseudoRandom = async () => {
+  const pets = await getPets();
+
   let fullList = (() => {
     let tempArr = [];
 
-    for(let i = 0; i < 1; i++) {
+    for(let i = 0; i < 6; i++) {
       const newPetsCard = pets;
 
       for(let j = pets.length; j > 0; j--) {
@@ -42,21 +44,28 @@ export const pseudoRandom = async (pets, current) => {
     return tempArr;
   })();
 
-  fullList = sortCards(fullList, current);
+  fullList = sortRecursivelySlide(fullList, 6, 8);
   
   return fullList;
 }
 
-export const sortCards = (list, petOnScreen) => {
-  const newList = list;
-
-  for(let i = 0; i < newList.length; i++) {
-    for(let j = 0 ; j < petOnScreen.length; j++) {
-      if(newList[i].name === petOnScreen[j].name) {
-        newList.splice(i, 1);
+const sortRecursivelySlide = (list, elemOnScreen, elemStack) => {
+  const length = list.length;
+  for(let i = 0; i < (length / elemOnScreen); i++) {
+    const stepList = list.slice(i * elemOnScreen, (i * elemOnScreen) + elemOnScreen);
+    
+    for(let j = 0; j < elemOnScreen; j++) {
+      const duplicatedItem = stepList.find((item, index) => {
+        return item.id === stepList[j].id && (index !== j)
+      })
+      if(duplicatedItem !== undefined) {
+        const index = (i * elemOnScreen) + j;
+        const whichOfList = Math.trunc(index / elemStack)
+        
+        list.splice(whichOfList * elemStack, 0, list.splice(index, 1)[0])
+        sortRecursivelySlide(list)
       }
     }
   }
-
-  return newList;
+  return list;
 }

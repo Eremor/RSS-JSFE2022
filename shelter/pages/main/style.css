@@ -1,5 +1,5 @@
-@import url(d:\other\git repository\eremor-JSFE2022Q1\shelter\assets\fonts\arial\arial-font.css);
-@import url(d:\other\git repository\eremor-JSFE2022Q1\shelter\assets\fonts\georgia\georgia-font.css);
+@import url(e:\rep\eremor-JSFE2022Q1\shelter\assets\fonts\arial\arial-font.css);
+@import url(e:\rep\eremor-JSFE2022Q1\shelter\assets\fonts\georgia\georgia-font.css);
 :root {
   --start-gradient: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
   --footer-gradient: radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%);
@@ -715,6 +715,12 @@ body {
   }
 }
 
+.slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .slider {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -738,6 +744,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   overflow-x: hidden;
   max-width: 1079px;
 }
@@ -745,6 +753,26 @@ body {
 @media screen and (max-width: 1279px) {
   .slider__body {
     max-width: 580px;
+  }
+}
+
+.slider__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  left: -1080px;
+}
+
+@media screen and (max-width: 1279px) {
+  .slider__wrapper {
+    left: -620px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .slider__wrapper {
+    left: -285px;
   }
 }
 
@@ -781,8 +809,8 @@ body {
   border-radius: 9px;
   cursor: pointer;
   background-color: var(--color-light-s);
-  -webkit-transition: translate 1s;
-  transition: translate 1s;
+  -webkit-transition: all 3s;
+  transition: all 3s;
 }
 
 .card:hover {
@@ -1634,5 +1662,124 @@ body {
 .popup__btn--hover {
   border-color: var(--color-primary-light);
   background-color: var(--color-primary-light);
+}
+
+@media screen and (min-width: 1280px) {
+  @-webkit-keyframes move-right {
+    from {
+      left: -1080px;
+    }
+    to {
+      left: -2160px;
+    }
+  }
+  @keyframes move-right {
+    from {
+      left: -1080px;
+    }
+    to {
+      left: -2160px;
+    }
+  }
+  @-webkit-keyframes move-left {
+    from {
+      left: -1080px;
+    }
+    to {
+      left: 0;
+    }
+  }
+  @keyframes move-left {
+    from {
+      left: -1080px;
+    }
+    to {
+      left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  @-webkit-keyframes move-right {
+    from {
+      left: -620px;
+    }
+    to {
+      left: -1240px;
+    }
+  }
+  @keyframes move-right {
+    from {
+      left: -620px;
+    }
+    to {
+      left: -1240px;
+    }
+  }
+  @-webkit-keyframes move-left {
+    from {
+      left: -620px;
+    }
+    to {
+      left: 0;
+    }
+  }
+  @keyframes move-left {
+    from {
+      left: -620px;
+    }
+    to {
+      left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  @-webkit-keyframes move-right {
+    from {
+      left: -285px;
+    }
+    to {
+      left: -570px;
+    }
+  }
+  @keyframes move-right {
+    from {
+      left: -285px;
+    }
+    to {
+      left: -570px;
+    }
+  }
+  @-webkit-keyframes move-left {
+    from {
+      left: -285px;
+    }
+    to {
+      left: 0;
+    }
+  }
+  @keyframes move-left {
+    from {
+      left: -285px;
+    }
+    to {
+      left: 0;
+    }
+  }
+}
+
+.transition-right {
+  -webkit-animation-name: move-right;
+          animation-name: move-right;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.transition-left {
+  -webkit-animation-name: move-left;
+          animation-name: move-left;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
 }
 /*# sourceMappingURL=style.css.map */

@@ -19,7 +19,7 @@ export class Card {
     cardBtn.textContent = 'Learn more';
 
     const cardBody = document.createElement('div');
-    cardBody.classList.add('card', this.className);
+    cardBody.classList.add(this.className, 'card');
     cardBody.append(cardImage, cardTitle, cardBtn);
 
     return cardBody;
