@@ -739,6 +739,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   overflow-x: hidden;
+  max-width: 1079px;
 }
 
 @media screen and (max-width: 1279px) {
@@ -750,9 +751,6 @@ body {
 .slider__item {
   margin-right: 45px;
   margin-left: 45px;
-  /* &:last-child {
-      margin-right: 0;
-    } */
 }
 
 @media screen and (max-width: 1279px) {
@@ -783,6 +781,8 @@ body {
   border-radius: 9px;
   cursor: pointer;
   background-color: var(--color-light-s);
+  -webkit-transition: translate 1s;
+  transition: translate 1s;
 }
 
 .card:hover {
