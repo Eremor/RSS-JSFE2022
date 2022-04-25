@@ -1,6 +1,6 @@
 import { Burger } from "../../assets/scripts/burger.js";
 import { Card } from "../../assets/scripts/card.js";
-import { getPets, pseudoRandom, showPopup } from "../../assets/scripts/util.js";
+import { pseudoRandom, showPopup } from "../../assets/scripts/util.js";
 
 const burgerBtn = document.querySelector('.burger');
 const navBar = document.querySelector('.nav');
@@ -84,7 +84,9 @@ const handlerAnimation = async (e) => {
 }
 
 burgerBtn.addEventListener('click', burger.toggle);
-navBar.addEventListener('click', burger.hideOnClick);
+if(window.innerWidth <= 767) {
+  navBar.addEventListener('click', burger.hideOnClick);
+}
 cardList.forEach((card) => card.addEventListener('click', showPopup));
 leftBtn.addEventListener('click', moveLeft);
 rightBtn.addEventListener('click', moveRight);

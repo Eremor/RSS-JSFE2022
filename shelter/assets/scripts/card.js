@@ -1,3 +1,5 @@
+import { showPopup } from "./util.js";
+
 export class Card {
   constructor(pet, className) {
     this.pet = pet;
@@ -21,6 +23,8 @@ export class Card {
     const cardBody = document.createElement('div');
     cardBody.classList.add(this.className, 'card');
     cardBody.append(cardImage, cardTitle, cardBtn);
+
+    cardBody.addEventListener('click', showPopup);
 
     return cardBody;
   }

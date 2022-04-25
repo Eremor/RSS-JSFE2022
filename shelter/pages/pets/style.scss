@@ -359,6 +359,15 @@ body {
     }
   }
 
+  &__content {
+    position: relative;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px 40px;
+  }
+
   &__pagination {
     width: 100%;
     max-width: 340px;

@@ -44,12 +44,12 @@ export const pseudoRandom = async () => {
     return tempArr;
   })();
 
-  fullList = sortRecursivelySlide(fullList, 6, 8);
+  fullList = sortPetsCard(fullList, 6, 8);
   
   return fullList;
 }
 
-const sortRecursivelySlide = (list, elemOnScreen, elemStack) => {
+const sortPetsCard = (list, elemOnScreen, elemStack) => {
   const length = list.length;
   for(let i = 0; i < (length / elemOnScreen); i++) {
     const stepList = list.slice(i * elemOnScreen, (i * elemOnScreen) + elemOnScreen);
@@ -63,7 +63,7 @@ const sortRecursivelySlide = (list, elemOnScreen, elemStack) => {
         const whichOfList = Math.trunc(index / elemStack)
         
         list.splice(whichOfList * elemStack, 0, list.splice(index, 1)[0])
-        sortRecursivelySlide(list)
+        sortPetsCard(list)
       }
     }
   }
