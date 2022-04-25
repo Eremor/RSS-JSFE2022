@@ -18,5 +18,10 @@ export class Burger {
     if(e.target.classList.contains('nav__link') || e.target.classList.contains('nav--open')) {
       this.toggle();
     }
+
+    if(e.target.parentElement.classList.contains('nav__item--active')) {
+      e.preventDefault();
+      window.scrollTo(0, 0);
+    }
   }
 }
