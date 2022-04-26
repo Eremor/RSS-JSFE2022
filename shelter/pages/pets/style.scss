@@ -147,8 +147,13 @@ body {
   &__burger {
     display: none;
     position: absolute;
-
+    
     @media screen and (max-width: 767px) {
+      display: flex;
+      right: 10.5%;
+    }
+
+    @media screen and (max-width: 519px) {
       display: flex;
       right: 16.5%;
     }

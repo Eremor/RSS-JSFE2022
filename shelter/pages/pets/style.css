@@ -172,6 +172,15 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    right: 10.5%;
+  }
+}
+
+@media screen and (max-width: 519px) {
+  .header__burger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     right: 16.5%;
   }
 }
