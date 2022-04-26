@@ -1,6 +1,6 @@
 import { Burger } from "../../assets/scripts/burger.js";
 import { Card } from "../../assets/scripts/card.js";
-import { pseudoRandom, showPopup } from "../../assets/scripts/util.js";
+import { getPets, pseudoRandom, showPopup } from "../../assets/scripts/util.js";
 
 const burgerBtn = document.querySelector('.burger');
 const navBar = document.querySelector('.nav');
@@ -14,10 +14,12 @@ const sliderRight = slider.querySelector('.slider__right');
 const activeSlide = slider.querySelector('.slider__active');
 
 let randomPets = await pseudoRandom();
+let pets = await getPets();
+let currentPets = [];
 
 const burger = new Burger(navBar, burgerBtn);
 
-const getAmountCardsOnPage = (() => {
+const getAmountCardsOnPage = () => {
   let amountCards;
 
   if(window.innerWidth >= 1280) {
@@ -29,23 +31,37 @@ const getAmountCardsOnPage = (() => {
   }
 
   return amountCards;
-})();
+};
+
+const amountCardsOnPage = getAmountCardsOnPage();
 
 const createCards = (container) => {
-  for(let i = 0; i < getAmountCardsOnPage; i++) {
-    const card = new Card(randomPets[i], 'slider__item').create();
+  const newPets = pets.filter((item) => !currentPets.includes(item));
+  
+  const initialIndex = [];
+  for(let i = 0; i < amountCardsOnPage; i++) {
+    const randomIndex = Math.floor(Math.random() * 5);
+    if(initialIndex.every(index => index != randomIndex)) {
+      initialIndex.push(randomIndex);
+    } else {
+      i--;
+    }
+  }
+
+  for(let i = 0; i < initialIndex.length; i++) {
+    const index = initialIndex[i];
+    const card = new Card(newPets[index], 'slider__item').create();
     container.append(card);
-    randomPets.shift();
+    currentPets.push(newPets[index]);
+    if(currentPets.length > 3) {
+      currentPets.shift();
+    }
   }
 }
 
-const initialCard = () => {
-  createCards(sliderLeft);
-  createCards(activeSlide);
-  createCards(sliderRight);
-}
-
-initialCard();
+createCards(sliderLeft);
+createCards(activeSlide);
+createCards(sliderRight);
 
 const moveLeft = () => {
   carousel.classList.add('transition-left');
@@ -75,7 +91,7 @@ const handlerAnimation = async (e) => {
   changeItem.innerHTML = '';
   createCards(changeItem);
 
-  if(randomPets.length < getAmountCardsOnPage) {
+  if(randomPets.length < amountCardsOnPage) {
     randomPets = await pseudoRandom();
   }
 
