@@ -166,6 +166,7 @@ body {
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  transition: all 0.3s;
 
   &__title {
     margin: 0;
@@ -187,6 +188,16 @@ body {
     line-height: 1.5rem;
     letter-spacing: 0.1em;
     color: var(--color-dark-3xl);
+  }
+
+  &--hidden {
+    opacity: 0;
+  }
+
+  &--burger {
+    position: absolute;
+    top: 60px;
+    right: 125px;
   }
 }
 

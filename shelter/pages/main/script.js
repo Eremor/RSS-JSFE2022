@@ -1,6 +1,6 @@
 import { Burger } from "../../assets/scripts/burger.js";
 import { Card } from "../../assets/scripts/card.js";
-import { getPets, pseudoRandom, showPopup } from "../../assets/scripts/util.js";
+import { getPets, showPopup } from "../../assets/scripts/util.js";
 
 const burgerBtn = document.querySelector('.burger');
 const navBar = document.querySelector('.nav');
@@ -13,15 +13,15 @@ const sliderLeft = slider.querySelector('.slider__left');
 const sliderRight = slider.querySelector('.slider__right');
 const activeSlide = slider.querySelector('.slider__active');
 
-let randomPets = await pseudoRandom();
 let pets = await getPets();
 let currentPets = [];
+let nextPets = [];
 
 const burger = new Burger(navBar, burgerBtn);
 
 const getAmountCardsOnPage = () => {
   let amountCards;
-
+  
   if(window.innerWidth >= 1280) {
     amountCards = 3;
   } else if(window.innerWidth >= 768) {
@@ -29,15 +29,20 @@ const getAmountCardsOnPage = () => {
   } else {
     amountCards = 1;
   }
-
+  
   return amountCards;
 };
 
 const amountCardsOnPage = getAmountCardsOnPage();
 
 const createCards = (container) => {
+  for(let i = 0; i < amountCardsOnPage; i++) {
+    currentPets.push(nextPets[i]);
+  }
+  nextPets = [];
+
   const newPets = pets.filter((item) => !currentPets.includes(item));
-  
+    
   const initialIndex = [];
   for(let i = 0; i < amountCardsOnPage; i++) {
     const randomIndex = Math.floor(Math.random() * 5);
@@ -50,13 +55,14 @@ const createCards = (container) => {
 
   for(let i = 0; i < initialIndex.length; i++) {
     const index = initialIndex[i];
-    const card = new Card(newPets[index], 'slider__item').create();
+    const item = newPets[index];
+
+    const card = new Card(item, 'slider__item').create();
     container.append(card);
-    currentPets.push(newPets[index]);
-    if(currentPets.length > 3) {
-      currentPets.shift();
-    }
+    nextPets.push(item);
   }
+  
+  currentPets = [];
 }
 
 createCards(sliderLeft);
@@ -91,8 +97,10 @@ const handlerAnimation = async (e) => {
   changeItem.innerHTML = '';
   createCards(changeItem);
 
-  if(randomPets.length < amountCardsOnPage) {
-    randomPets = await pseudoRandom();
+  if(e.animationName === 'move-left') {
+    sliderRight.innerHTML = changeItem.innerHTML;
+  } else {
+    sliderLeft.innerHTML = changeItem.innerHTML;
   }
 
   leftBtn.addEventListener('click', moveLeft);
