@@ -4,7 +4,7 @@ import { Card } from "../../assets/scripts/card.js";
 
 const burgerBtn = document.querySelector('.burger');
 const navBar = document.querySelector('.nav');
-const container = document.querySelector('.friends__content');
+const cardsWrapper = document.querySelector('.friends__content');
 const arrowStart = document.querySelector('[data-arrow="start"]');
 const arrowPrev = document.querySelector('[data-arrow="prev"]');
 const arrowNext = document.querySelector('[data-arrow="next"]');
@@ -13,7 +13,7 @@ const counter = document.querySelector('.btn--number');
 
 const burger = new Burger(navBar, burgerBtn);
 
-const getLastPage = (() => {
+const getLastPage = () => {
   let lastPage;
 
   if(window.innerWidth >= 1280) {
@@ -25,32 +25,38 @@ const getLastPage = (() => {
   }
 
   return lastPage;
-})();
+};
 
-const offsetY = (() => {
+const getOffsetY = () => {
   let height;
 
   if(window.innerWidth >= 1280) {
-    height = 900;
+    height = 900 + 28;
   } else {
-    height = 1365;
+    height = 1365 + 27;
   }
-})();
 
-let countPage = 1;
+  return height;
+};
+
+const offsetY = getOffsetY();
+const lastPage = getLastPage();
+
+let countPage = 0;
 const randomPets = await pseudoRandom();
 
 const initCard = () => {
   randomPets.forEach((pet) => {
     const card = new Card(pet, 'friends__item').create();
-    container.append(card);
-  })
+    cardsWrapper.append(card);
+  });
+  cardsWrapper.style.top = '0px';
 }
 
 initCard();
 
 const updateCountBtn = () => {
-  counter.textContent = countPage;
+  counter.textContent = countPage + 1;
 }
 
 const setDisabledButton = () => {
@@ -66,7 +72,7 @@ const setDisabledButton = () => {
     arrowPrev.removeAttribute('disabled');
   }
 
-  if(countPage == getLastPage) {
+  if(countPage == lastPage) {
     arrowEnd.classList.add('btn--disabled');
     arrowNext.classList.add('btn--disabled');
     arrowEnd.setAttribute('disabled', 'true');
@@ -83,17 +89,17 @@ burgerBtn.addEventListener('click', burger.toggle);
 navBar.addEventListener('click', burger.hideOnClick);
 
 arrowEnd.addEventListener('click', () => {
-  container.style.top = `calc(0px - ${offsetY * getLastPage}px)`;
-  countPage = getLastPage;
+  cardsWrapper.style.top = `calc(0px - ${offsetY * lastPage}px)`;
+  countPage = lastPage;
   updateCountBtn();
   setDisabledButton();
 });
 
 arrowNext.addEventListener('click', () => {
-  if(countPage < getLastPage) {
+  if(countPage < lastPage) {
     countPage++;
   }
-  container.style.top = `calc(0px - ${offsetY * countPage}px)`;
+  cardsWrapper.style.top = `calc(0px - ${offsetY * countPage}px)`;
   updateCountBtn();
   setDisabledButton();
 });
@@ -102,13 +108,13 @@ arrowPrev.addEventListener('click', () => {
   if(countPage > 1) {
     countPage--;
   }
-  container.style.top = `calc(0px - ${offsetY * countPage}px)`;
+  cardsWrapper.style.top = `calc(0px - ${offsetY * countPage}px)`;
   updateCountBtn();
   setDisabledButton();
 });
 
 arrowStart.addEventListener('click', () => {
-  container.style.top = '0px';
+  cardsWrapper.style.top = '0px';
   countPage = 1;
   updateCountBtn();
   setDisabledButton();
