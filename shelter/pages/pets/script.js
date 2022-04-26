@@ -60,7 +60,7 @@ const updateCountBtn = () => {
 }
 
 const setDisabledButton = () => {
-  if(countPage == 1) {
+  if(countPage == 0) {
     arrowStart.classList.add('btn--disabled');
     arrowPrev.classList.add('btn--disabled');
     arrowStart.setAttribute('disabled', 'true');
@@ -105,7 +105,7 @@ arrowNext.addEventListener('click', () => {
 });
 
 arrowPrev.addEventListener('click', () => {
-  if(countPage > 1) {
+  if(countPage > 0) {
     countPage--;
   }
   cardsWrapper.style.top = `calc(0px - ${offsetY * countPage}px)`;
@@ -115,7 +115,7 @@ arrowPrev.addEventListener('click', () => {
 
 arrowStart.addEventListener('click', () => {
   cardsWrapper.style.top = '0px';
-  countPage = 1;
+  countPage = 0;
   updateCountBtn();
   setDisabledButton();
 })
