@@ -44,28 +44,32 @@ export const pseudoRandom = async () => {
     return tempArr;
   })();
 
-  fullList = sortPetsCard(fullList, 6, 8);
+  fullList = sortPetsCard(fullList);
   
   return fullList;
 }
 
-const sortPetsCard = (list, elemOnScreen, elemStack) => {
-  const length = list.length;
-  for(let i = 0; i < (length / elemOnScreen); i++) {
-    const stepList = list.slice(i * elemOnScreen, (i * elemOnScreen) + elemOnScreen);
-    
-    for(let j = 0; j < elemOnScreen; j++) {
+const sortPetsCard = (list) => {
+  const length = list.length
+
+  for(let i = 0; i < (length / 6); i++) {
+    const stepList = list.slice(i * 6, (i * 6) + 6)
+
+    for(let j = 0; j < 6; j++) {
       const duplicatedItem = stepList.find((item, index) => {
-        return item.id === stepList[j].id && (index !== j)
+        return item.name === stepList[j].name && (index !== j)
       })
+
       if(duplicatedItem !== undefined) {
-        const index = (i * elemOnScreen) + j;
-        const whichOfList = Math.trunc(index / elemStack)
-        
-        list.splice(whichOfList * elemStack, 0, list.splice(index, 1)[0])
+        const index = (i * 6) + j
+        const which8OfList = Math.trunc(index / 8)
+
+        list.splice(which8OfList * 8, 0, list.splice(index, 1)[0])
+
         sortPetsCard(list)
       }
     }
   }
-  return list;
+
+  return list
 }
