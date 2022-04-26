@@ -97,6 +97,7 @@ const handlerAnimation = async (e) => {
 
   leftBtn.addEventListener('click', moveLeft);
   rightBtn.addEventListener('click', moveRight);
+  document.querySelectorAll('.card').forEach(card => card.addEventListener('click', showPopup));
 }
 
 burgerBtn.addEventListener('click', burger.toggle);
