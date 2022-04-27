@@ -259,9 +259,9 @@ body {
     list-style: none;
 
     @media screen and (max-width: 767px) {
-      padding-top: 248px;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       width: 320px;
       background-color: var(--color-light-xl);
     }
