@@ -1,10 +1,10 @@
-type NewsSource = {
+export interface ISource {
   id: string | null;
   name: string;
-};
+}
 
 export interface INews {
-  source: NewsSource;
+  source: ISource;
   author: string;
   title: string;
   description: string;
