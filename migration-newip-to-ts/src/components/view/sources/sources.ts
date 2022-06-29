@@ -13,7 +13,7 @@ class Sources {
       sourceName.textContent = item.name;
 
       const sourceItem = <HTMLDivElement>sourceClone.querySelector('.source__item');
-      sourceItem.setAttribute('data-source-id', item.id || item.name);
+      sourceItem.setAttribute('data-source-id', item.id);
 
       fragment.append(sourceClone);
     });

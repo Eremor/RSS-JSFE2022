@@ -1,10 +1,20 @@
 export interface ISource {
-  id: string | null;
+  id: string;
   name: string;
+  description: string;
+  url: string;
+  category: string;
+  language: string;
+  country: string;
 }
 
+type NewsSource = {
+  id: string | null;
+  name: string;
+};
+
 export interface INews {
-  source: ISource;
+  source: NewsSource;
   author: string;
   title: string;
   description: string;
@@ -12,4 +22,9 @@ export interface INews {
   urlToImage: string;
   publishedAt: string;
   content: string;
+}
+
+export interface IView {
+  articles: INews[];
+  sources: ISource[];
 }
