@@ -28,3 +28,12 @@ export interface IView {
   articles: INews[];
   sources: ISource[];
 }
+
+export type UrlLoadOptions = {
+  apiKey: string;
+  sources?: string;
+};
+
+export type LoaderSource = {
+  sources: string;
+};
