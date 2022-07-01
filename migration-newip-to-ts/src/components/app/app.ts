@@ -3,8 +3,8 @@ import AppController from '../controller/controller';
 import { AppView } from '../view/appView';
 
 class App {
-  private controller = new AppController();
-  private view = new AppView();
+  private controller: AppController = new AppController();
+  private view: AppView = new AppView();
 
   public start(): void {
     const sources = <HTMLLIElement>document.querySelector('.sources');
