@@ -37,3 +37,8 @@ export type UrlLoadOptions = {
 export type LoaderSource = {
   sources: string;
 };
+
+export interface IGetResp {
+  endpoint: string;
+  options?: LoaderSource | object;
+}

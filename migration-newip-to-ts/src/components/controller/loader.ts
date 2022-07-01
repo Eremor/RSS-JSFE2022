@@ -1,9 +1,4 @@
-import { INews, ISource, LoaderSource, UrlLoadOptions } from '../../interfaces/types';
-
-type GetResp = {
-  endpoint: string;
-  options: LoaderSource | object;
-};
+import { IGetResp, INews, ISource, LoaderSource, UrlLoadOptions } from '../../interfaces/types';
 
 class Loader {
   private baseLink: string;
@@ -15,7 +10,7 @@ class Loader {
   }
 
   getResp(
-    { endpoint, options = {} }: GetResp,
+    { endpoint, options = {} }: IGetResp,
     callback = () => {
       console.error('No callback for GET response');
     }
