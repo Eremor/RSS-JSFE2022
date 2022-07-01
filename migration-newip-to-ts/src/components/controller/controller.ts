@@ -1,8 +1,8 @@
-import { INews, ISource } from '../../interfaces/types';
+import { IView } from '../../interfaces/types';
 import AppLoader from './appLoader';
 
 class AppController extends AppLoader {
-  getSources(callback: (data?: ISource) => void) {
+  getSources(callback: (data?: IView) => void): void {
     super.getResp(
       {
         endpoint: 'sources',
@@ -11,7 +11,7 @@ class AppController extends AppLoader {
     );
   }
 
-  getNews(e: Event, callback: (data?: INews) => void) {
+  getNews(e: Event, callback: (data?: IView) => void): void {
     let target = <HTMLElement>e.target;
     const newsContainer = <HTMLElement>e.currentTarget;
 

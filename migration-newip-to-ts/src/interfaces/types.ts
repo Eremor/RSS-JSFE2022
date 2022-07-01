@@ -25,8 +25,8 @@ export interface INews {
 }
 
 export interface IView {
-  articles: INews[];
-  sources: ISource[];
+  articles?: INews[];
+  sources?: ISource[];
 }
 
 export type UrlLoadOptions = {
