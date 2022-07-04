@@ -3,7 +3,7 @@ import './sources.css';
 
 class Sources {
   public draw(data: ISource[]): void {
-    const fragment = document.createDocumentFragment();
+    const fragment: DocumentFragment = document.createDocumentFragment();
     const sourceItemTemp = <HTMLTemplateElement>document.querySelector('#sourceItemTemp');
 
     data.forEach((item: ISource) => {

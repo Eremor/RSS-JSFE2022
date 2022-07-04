@@ -8,7 +8,9 @@ class App {
 
   public start(): void {
     const sources = <HTMLLIElement>document.querySelector('.sources');
-    sources.addEventListener('click', (e) => this.controller.getNews(e, (data) => this.view.drawNews(data as IView)));
+    sources.addEventListener('click', (e: MouseEvent) =>
+      this.controller.getNews(e, (data) => this.view.drawNews(data as IView))
+    );
     this.controller.getSources((data) => this.view.drawSources(data as IView));
   }
 }
