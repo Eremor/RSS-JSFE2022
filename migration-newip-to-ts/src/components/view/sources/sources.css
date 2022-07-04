@@ -32,3 +32,9 @@
   font-weight: 400;
   white-space: nowrap;
 }
+
+@media screen and (max-width: 530px) {
+  .source__item {
+    padding: 0.5em 1em;
+  }
+}

@@ -23,6 +23,7 @@ footer {
 
 .footer__container {
   padding-top: 50px;
+  padding-bottom: 30px;
   width: 90%;
   display: flex;
   align-items: center;
@@ -78,4 +79,20 @@ footer .copyright:before {
 
 .footer__logo:hover {
   transform: scale(1.1);
+}
+
+@media screen and (max-width: 530px) {
+
+  header h1 {
+    margin: 0;
+    margin-top: 15px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  header h1 {
+    margin-top: 0;
+    font-size: 32px;
+  }
 }
