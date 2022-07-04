@@ -17,7 +17,7 @@ class App {
         this.controller.getSources((data) => this.view.drawSources(data as IView, filter[0]));
       }
     });
-    this.controller.getAlphabet((data) => this.view.drawAlphabet(data as IView));
+    this.controller.getSources((data) => this.view.drawAlphabet(data as IView));
   }
 }
 

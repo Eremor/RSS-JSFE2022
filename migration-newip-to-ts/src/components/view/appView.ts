@@ -6,7 +6,7 @@ import Sources from './sources/sources';
 export class AppView {
   private news: News = new News();
   private sources: Sources = new Sources();
-  private alphabet = new Alphabet();
+  private alphabet: Alphabet = new Alphabet();
 
   public drawNews(data: IView): void {
     const values: INews[] = data?.articles ? data?.articles : [];
