@@ -8,10 +8,16 @@ class App {
 
   public start(): void {
     const sources = <HTMLLIElement>document.querySelector('.sources');
-    sources.addEventListener('click', (e: MouseEvent) =>
-      this.controller.getNews(e, (data) => this.view.drawNews(data as IView))
-    );
-    this.controller.getSources((data) => this.view.drawSources(data as IView));
+    sources.addEventListener('click', (e: MouseEvent) => {
+      this.controller.getNews(e, (data) => this.view.drawNews(data as IView));
+
+      const target = <HTMLElement>e.target;
+      if (target.classList.contains('letter')) {
+        const filter = <string>target.dataset.letter;
+        this.controller.getSources((data) => this.view.drawSources(data as IView, filter[0]));
+      }
+    });
+    this.controller.getAlphabet((data) => this.view.drawAlphabet(data as IView));
   }
 }
 

@@ -71,7 +71,7 @@ footer .copyright:before {
   display: block;
   width: 150px;
   height: 50px;
-  background: url(../public/rs_school_js.svg) center no-repeat;
+  background: url('../public/rs_school_js.svg') center no-repeat;
   filter: invert(100%);
   transition: 0.2s;
 }

@@ -2,6 +2,15 @@ import { IView } from '../../interfaces/types';
 import AppLoader from './appLoader';
 
 class AppController extends AppLoader {
+  public getAlphabet(callback: (data?: IView) => void): void {
+    super.getResp(
+      {
+        endpoint: 'sources',
+      },
+      callback
+    );
+  }
+
   public getSources(callback: (data?: IView) => void): void {
     super.getResp(
       {

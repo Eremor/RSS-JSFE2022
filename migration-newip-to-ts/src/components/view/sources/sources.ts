@@ -2,11 +2,13 @@ import { ISource } from '../../../interfaces/types';
 import './sources.css';
 
 class Sources {
-  public draw(data: ISource[]): void {
+  public draw(data: ISource[], filter: string): void {
     const fragment: DocumentFragment = document.createDocumentFragment();
     const sourceItemTemp = <HTMLTemplateElement>document.querySelector('#sourceItemTemp');
 
-    data.forEach((item: ISource) => {
+    const buttons = data.filter((item: ISource) => item.id[0] === filter);
+
+    buttons.forEach((item: ISource) => {
       const sourceClone = sourceItemTemp.content.cloneNode(true) as HTMLElement;
 
       const sourceName = <HTMLSpanElement>sourceClone.querySelector('.source__item-name');
@@ -18,7 +20,8 @@ class Sources {
       fragment.append(sourceClone);
     });
 
-    const sourceContainer = <HTMLDivElement>document.querySelector('.sources');
+    const sourceContainer = <HTMLDivElement>document.querySelector('.source__content');
+    sourceContainer.innerHTML = '';
     sourceContainer.append(fragment);
   }
 }
