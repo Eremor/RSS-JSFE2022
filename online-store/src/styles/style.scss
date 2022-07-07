@@ -1,0 +1,348 @@
+@import "colors";
+@import "fonts";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  @include main-font;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.btn {
+  padding: 0;
+  display: block;
+  font-family: inherit;
+  border: none;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.header {
+  background-color: $background-color;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    margin: 20px 0;
+  }
+
+  &__cart {
+    margin-right: 50px;
+  }
+}
+
+.logo {
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include logo-font;
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: $primary-color;
+  text-decoration: none;
+  background-color: $secondary-color;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+
+  &__link {
+    margin-right: 25px;
+    @include main-font;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    color: $primary-color;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+.cart {
+  position: relative;
+  padding-right: 30px;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  background: url("../assets/icons/cart.svg") center right no-repeat;
+  background-size: 25px 25px;
+  cursor: pointer;
+
+  &__text {
+    @include main-font;
+    font-size: 2.3rem;
+    line-height: 2.5rem;
+    color: $font-color;
+  }
+
+  &__count {
+    position: absolute;
+    top: -10px;
+    right: -15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    background-color: $secondary-color;
+    border-radius: 50%;
+  }
+
+  &__value {
+    @include logo-font;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: $primary-color;
+  }
+}
+
+.chain {
+  background-color: $primary-color;
+
+  &__wrapper {
+    padding: 50px 0;
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+    color: $light-color;
+    letter-spacing: 4px;
+
+    span {
+      color: $secondary-color;
+      cursor: pointer;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+.products {
+  background-color: $background-color;
+
+  &__wrapper {
+    padding: 50px 0;
+    display: flex;
+  }
+
+  &__field {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.sort {
+  padding: 0 20px;
+  padding-top: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__count {
+    margin: 0;
+    margin-right: 10px;
+    padding: 0;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    color: $font-color;
+  }
+
+  hr {
+    margin: 0 auto;
+    padding: 0;
+    width: 50%;
+    border: none;
+    border-top: 1px solid #cecece;
+  }
+
+  &__text {
+    margin: 0 10px;
+    padding: 0;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    color: $font-color;
+  }
+
+  &__list {
+    border: none;
+    outline: none;
+    @include main-font;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    color: $font-color;
+  }
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__title {
+    margin: 0;
+    margin-bottom: 15px;
+    padding: 0;
+    @include logo-font;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2rem;
+  }
+
+  &__query {
+    margin-bottom: 25px;
+  }
+
+  &__category {
+    margin-bottom: 25px;
+  }
+
+  &__company {
+    margin-bottom: 25px;
+  }
+}
+
+.query {
+  position: relative;
+  width: 189px;
+
+  &__input {
+    padding: 10px 10px;
+    padding-right: 30px;
+    width: 100%;
+    @include main-font;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    color: $font-color;
+    background-color: $filter-color;
+    border: transparent;
+    border-radius: 5px;
+
+    &::placeholder {
+      color: $font-color;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: 10px;
+    right: 7px;
+    width: 20px;
+    height: 20px;
+    background: url("../assets/icons/cancel.svg") center no-repeat;
+    background-size: contain;
+  }
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    display: flex;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    color: $font-color;
+    text-transform: capitalize;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    transition: 0.3s;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      opacity: 0.9;
+      color: $primary-color;
+    }
+
+    &--active {
+      padding-bottom: 3px;
+      font-weight: 700;
+      color: $primary-color;
+    }
+  }
+}
+
+.company {
+  display: flex;
+  flex-direction: column;
+
+  &__list {
+    padding: 5px;
+    @include main-font;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    color: $font-color;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: $filter-color;
+  }
+
+  &__item {
+    @include main-font;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    color: $font-color;
+  }
+}

@@ -9,7 +9,7 @@
   <body>
     <header class="header">
       <div class="header__wrapper wrapper">
-        <a class="header__logo logo">Mykea</a>
+        <a class="header__logo logo" href="#">MyKEA</a>
         <nav class="header__nav nav">
           <a href="#" class="nav__link">Home</a>
           <a href="#" class="nav__link">About</a>
@@ -17,7 +17,9 @@
         </nav>
         <div class="header__cart cart">
           <p class="cart__text">Cart</p>
-          <span class="cart__count">0</span>
+          <div class="cart__count">
+            <span class="cart__value" data-count="count">0</span>
+          </div>
         </div>
       </div>
     </header>
@@ -29,26 +31,60 @@
       </section>
       <section class="products">
         <div class="products__wrapper wrapper">
-          <div class="products__search search">
-            <div class="search__query query">
-              <input class="query__input" type="text" name="query" id="query" />
-              <button class="query__btn"></button>
+          <div class="products__filters filters">
+            <div class="filters__query query">
+              <input
+                class="query__input"
+                type="text"
+                name="query"
+                id="query"
+                placeholder="Search"
+              />
+              <button class="query__btn btn"></button>
             </div>
-            <div class="search__sort">
-              <p class="search__counter">
-                <span class="search__count">0</span> Products found
+            <div class="filters__category category">
+              <h3 class="filters__title">Category</h3>
+              <div class="category__list">
+                <button class="category__item category__item--active">
+                  all
+                </button>
+                <button class="category__item">office</button>
+                <button class="category__item">living room</button>
+                <button class="category__item">kitchen</button>
+                <button class="category__item">bedroom</button>
+                <button class="category__item">dining</button>
+                <button class="category__item">kids</button>
+              </div>
+            </div>
+            <div class="filters__company company">
+              <h3 class="filters__title">Company</h3>
+              <select class="company__list">
+                <option class="company__item" value="all">all</option>
+                <option class="company__item" value="marcos">marcos</option>
+                <option class="company__item" value="liddy">liddy</option>
+                <option class="company__item" value="ikea">ikea</option>
+                <option class="company__item" value="caressa">caressa</option>
+              </select>
+            </div>
+            filters
+          </div>
+          <div class="products__field">
+            <div class="products__sort sort">
+              <p class="sort__count">
+                <span class="sort__value" data-count="count">0</span> Products
+                found
               </p>
-              <p>Sort by</p>
-              <select class="search__sort" name="sort" id="sort">
+              <hr />
+              <p class="sort__text">Sort by</p>
+              <select class="sort__list" name="sort" id="sort">
                 <option value="price-lowest">Price (Lowest)</option>
                 <option value="price-highest">Price (Highest)</option>
                 <option value="name-a">Name (A-Z)</option>
                 <option value="name-z">Name (Z-A)</option>
               </select>
             </div>
+            <div class="products__sources sources">sources</div>
           </div>
-          <div class="products__filters filters"></div>
-          <div class="products__sources sources"></div>
         </div>
       </section>
     </main>
@@ -61,7 +97,7 @@
           >Eremor</a
         >
         <p class="footer__copyright">
-          &copy; <span>Mykea</span> All rights reserved
+          &copy; <span>MyKEA</span> All rights reserved
         </p>
         <a
           class="footer__logo"
