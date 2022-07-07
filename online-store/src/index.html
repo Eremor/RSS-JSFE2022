@@ -66,7 +66,45 @@
                 <option class="company__item" value="caressa">caressa</option>
               </select>
             </div>
-            filters
+            <div class="filters__colors colors">
+              <h3 class="filters__title">Colors</h3>
+              <div class="colors__list">
+                <button
+                  class="colors__item colors__item--text colors__item--text-active"
+                  data-color=""
+                >
+                  All
+                </button>
+                <button
+                  class="colors__item colors__item--circle colors__item--circle-active"
+                  data-color="#ff0000"
+                ></button>
+                <button
+                  class="colors__item colors__item--circle"
+                  data-color="#00ff00"
+                ></button>
+                <button
+                  class="colors__item colors__item--circle"
+                  data-color="#0000ff"
+                ></button>
+                <button
+                  class="colors__item colors__item--circle"
+                  data-color="#000"
+                ></button>
+                <button
+                  class="colors__item colors__item--circle"
+                  data-color="#ffb900"
+                ></button>
+              </div>
+            </div>
+            <div class="filters__price price">
+              <h3 class="filters__title">Price</h3>
+              <div class="price__content">
+                <span class="price__cost">$0 - $1000</span>
+                <input class="price__value" type="range" />
+              </div>
+            </div>
+            <button class="filters__btn">Clear filters</button>
           </div>
           <div class="products__field">
             <div class="products__sort sort">
