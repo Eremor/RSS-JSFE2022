@@ -170,6 +170,7 @@ body {
 
   &__wrapper {
     padding: 50px 0;
+    padding-bottom: 100px;
     display: flex;
   }
 
@@ -178,6 +179,10 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
+  }
+
+  &__sources {
+    margin-top: 40px;
   }
 }
 
@@ -471,5 +476,137 @@ body {
     font-size: 1.6rem;
     line-height: 1.8rem;
     color: $primary-color;
+  }
+}
+
+.sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    .card__overflow {
+      opacity: 1;
+    }
+  }
+
+  &__img {
+    width: 300px;
+    height: 175px;
+    border-radius: 5px;
+  }
+
+  &__overflow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 175px;
+    background-color: #00000060;
+    border-radius: 5px;
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  &__btn {
+    width: 50px;
+    height: 50px;
+    background-color: $secondary-color;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: url("../assets/icons/cart-plus.svg") center 0px no-repeat;
+      background-size: 100%;
+    }
+  }
+
+  &__content {
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+  }
+
+  &__price {
+    @include logo-font;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    letter-spacing: 1px;
+    color: $primary-color;
+    opacity: 0.9;
+  }
+}
+
+.footer {
+  background-color: $primary-color;
+
+  &__wrapper {
+    padding: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__github {
+    display: block;
+    width: 120px;
+    height: 45px;
+    padding-left: 45px;
+    background-image: url("../../public/github.svg");
+    background-size: 35px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    line-height: 45px;
+    color: $light-color;
+    font-size: 16px;
+    text-decoration: none;
+  }
+
+  &__copyright {
+    @include main-font;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: $light-color;
+    letter-spacing: 2px;
+
+    span {
+      @include logo-font;
+      font-weight: 700;
+      color: $secondary-color;
+    }
+  }
+
+  &__rss {
+    display: block;
+    width: 150px;
+    height: 50px;
+    background: url("../../public/rs_school_js.svg") center no-repeat;
+    filter: invert(100%);
+    transition: 0.2s;
   }
 }
