@@ -7,22 +7,6 @@
     <title>Online store</title>
   </head>
   <body>
-    <header class="header">
-      <div class="header__wrapper wrapper">
-        <a class="header__logo logo" href="#">MyKEA</a>
-        <nav class="header__nav nav">
-          <a href="#" class="nav__link">Home</a>
-          <a href="#" class="nav__link">About</a>
-          <a href="#" class="nav__link">Products</a>
-        </nav>
-        <div class="header__cart cart">
-          <p class="cart__text">Cart</p>
-          <div class="cart__count">
-            <span class="cart__value" data-count="count">0</span>
-          </div>
-        </div>
-      </div>
-    </header>
     <main>
       <section class="chain">
         <div class="chain__wrapper wrapper">
@@ -33,21 +17,13 @@
         <div class="products__wrapper wrapper">
           <div class="products__filters filters">
             <div class="filters__query query">
-              <input
-                class="query__input"
-                type="text"
-                name="query"
-                id="query"
-                placeholder="Search"
-              />
+              <input class="query__input" type="text" name="query" id="query" placeholder="Search" />
               <button class="query__btn btn"></button>
             </div>
             <div class="filters__category category">
               <h3 class="filters__title">Category</h3>
               <div class="category__list">
-                <button class="category__item category__item--active">
-                  all
-                </button>
+                <button class="category__item category__item--active">all</button>
                 <button class="category__item">office</button>
                 <button class="category__item">living room</button>
                 <button class="category__item">kitchen</button>
@@ -69,32 +45,15 @@
             <div class="filters__colors colors">
               <h3 class="filters__title">Colors</h3>
               <div class="colors__list">
-                <button
-                  class="colors__item colors__item--text colors__item--text-active"
-                  data-color=""
-                >
-                  All
-                </button>
+                <button class="colors__item colors__item--text colors__item--text-active" data-color="">All</button>
                 <button
                   class="colors__item colors__item--circle colors__item--circle-active"
                   data-color="#ff0000"
                 ></button>
-                <button
-                  class="colors__item colors__item--circle"
-                  data-color="#00ff00"
-                ></button>
-                <button
-                  class="colors__item colors__item--circle"
-                  data-color="#0000ff"
-                ></button>
-                <button
-                  class="colors__item colors__item--circle"
-                  data-color="#000"
-                ></button>
-                <button
-                  class="colors__item colors__item--circle"
-                  data-color="#ffb900"
-                ></button>
+                <button class="colors__item colors__item--circle" data-color="#00ff00"></button>
+                <button class="colors__item colors__item--circle" data-color="#0000ff"></button>
+                <button class="colors__item colors__item--circle" data-color="#000"></button>
+                <button class="colors__item colors__item--circle" data-color="#ffb900"></button>
               </div>
             </div>
             <div class="filters__price price">
@@ -108,10 +67,7 @@
           </div>
           <div class="products__field">
             <div class="products__sort sort">
-              <p class="sort__count">
-                <span class="sort__value" data-count="count">0</span> Products
-                found
-              </p>
+              <p class="sort__count"><span class="sort__value" data-count="count">0</span> Products found</p>
               <hr />
               <p class="sort__text">Sort by</p>
               <select class="sort__list" name="sort" id="sort">
@@ -185,15 +141,8 @@
     </main>
     <footer class="footer">
       <div class="footer__wrapper wrapper">
-        <a
-          class="footer__github"
-          href="https://github.com/Eremor"
-          target="_blank"
-          >Eremor</a
-        >
-        <p class="footer__copyright">
-          &copy; <span>MyKEA</span> All rights reserved
-        </p>
+        <a class="footer__github" href="https://github.com/Eremor" target="_blank">Eremor</a>
+        <p class="footer__copyright">&copy; <span>MyKEA</span> All rights reserved</p>
         <a class="footer__rss" href="https://rs.school/js/" target="_blank"></a>
       </div>
     </footer>

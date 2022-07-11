@@ -1,4 +1,5 @@
-import "./styles/style.scss";
+import { App } from './components/app/app';
+import './styles/style.scss';
 
-const test = "test";
-console.log(test);
+const app = new App(document.body);
+app.start();

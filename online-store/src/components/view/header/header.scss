@@ -1,0 +1,61 @@
+@import '../../../styles/colors';
+@import '../../../styles/fonts';
+
+.header {
+  background-color: $background-color;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    margin: 20px 0;
+  }
+
+  &__cart {
+    margin-right: 50px;
+  }
+}
+
+.logo {
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include logo-font;
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: $primary-color;
+  text-decoration: none;
+  background-color: $secondary-color;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+
+  &__link {
+    margin-right: 25px;
+    @include main-font;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    color: $primary-color;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}

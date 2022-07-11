@@ -4,12 +4,7 @@
     "browser": true,
     "es2022": true
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-    "prettier"
-  ],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended", "prettier"],
   "plugins": ["@typescript-eslint", "prettier", "import"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
