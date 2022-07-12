@@ -1,7 +1,9 @@
+import { filters } from '../../index';
 import { Chain } from '../view/chain/chain';
 import { Footer } from '../view/footer/footer';
 import { Header } from '../view/header/header';
 import { Products } from '../view/products/products';
+import { Sort } from '../view/sort/sort';
 
 export class App {
   private rootElement: HTMLElement;
@@ -27,5 +29,13 @@ export class App {
 
     main.append(chain.node, products.node);
     this.rootElement.append(header.node, main, footer.node);
+
+    const sort = new Sort();
+    sort.draw();
+
+    products.node.addEventListener('change', (e: Event) => {
+      console.log(e.target);
+      console.log(filters);
+    });
   }
 }

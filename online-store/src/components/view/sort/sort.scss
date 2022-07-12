@@ -1,0 +1,44 @@
+@import '../../../styles/colors';
+@import '../../../styles/fonts';
+
+.sort {
+  padding: 0 20px;
+  padding-top: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__count {
+    margin: 0;
+    margin-right: 10px;
+    padding: 0;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    color: $font-color;
+  }
+
+  hr {
+    margin: 0 auto;
+    padding: 0;
+    width: 50%;
+    border: none;
+    border-top: 1px solid #cecece;
+  }
+
+  &__text {
+    margin: 0 10px;
+    padding: 0;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    color: $font-color;
+  }
+
+  &__list {
+    border: none;
+    outline: none;
+    @include main-font;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    color: $font-color;
+  }
+}
