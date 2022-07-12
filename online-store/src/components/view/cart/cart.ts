@@ -6,7 +6,7 @@ export class Cart extends BaseComponent {
     super('div', ['cart', ...classes]);
   }
 
-  public draw = (titleText: string) => {
+  public draw = (titleText: string): void => {
     const title: HTMLParagraphElement = document.createElement('p');
     title.classList.add('cart__title');
     title.textContent = titleText;
@@ -17,7 +17,7 @@ export class Cart extends BaseComponent {
     const value: HTMLSpanElement = document.createElement('span');
     value.classList.add('cart__value');
     value.textContent = '0';
-    value.setAttribute('count', 'count');
+    value.setAttribute('data-count', 'count');
 
     count.append(value);
     this.node.append(title, count);

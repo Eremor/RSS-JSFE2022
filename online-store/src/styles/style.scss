@@ -45,50 +45,6 @@ body {
   cursor: pointer;
 }
 
-.chain {
-  background-color: $primary-color;
-
-  &__wrapper {
-    padding: 50px 0;
-  }
-
-  &__title {
-    margin: 0;
-    padding: 0;
-    font-size: 2.8rem;
-    line-height: 3.2rem;
-    color: $light-color;
-    letter-spacing: 4px;
-
-    span {
-      color: $secondary-color;
-      cursor: pointer;
-      letter-spacing: 2px;
-    }
-  }
-}
-
-.products {
-  background-color: $background-color;
-
-  &__wrapper {
-    padding: 50px 0;
-    padding-bottom: 100px;
-    display: flex;
-  }
-
-  &__field {
-    margin-left: 20px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  &__sources {
-    margin-top: 40px;
-  }
-}
-
 .sort {
   padding: 0 20px;
   padding-top: 7px;
@@ -462,54 +418,5 @@ body {
     letter-spacing: 1px;
     color: $primary-color;
     opacity: 0.9;
-  }
-}
-
-.footer {
-  background-color: $primary-color;
-
-  &__wrapper {
-    padding: 25px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  &__github {
-    display: block;
-    width: 120px;
-    height: 45px;
-    padding-left: 45px;
-    background-image: url('../../public/github.svg');
-    background-size: 35px;
-    background-repeat: no-repeat;
-    background-position: left center;
-    line-height: 45px;
-    color: $light-color;
-    font-size: 16px;
-    text-decoration: none;
-  }
-
-  &__copyright {
-    @include main-font;
-    font-size: 1.2rem;
-    line-height: 1.6rem;
-    color: $light-color;
-    letter-spacing: 2px;
-
-    span {
-      @include logo-font;
-      font-weight: 700;
-      color: $secondary-color;
-    }
-  }
-
-  &__rss {
-    display: block;
-    width: 150px;
-    height: 50px;
-    background: url('../../public/rs_school_js.svg') center no-repeat;
-    filter: invert(100%);
-    transition: 0.2s;
   }
 }

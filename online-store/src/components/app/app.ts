@@ -1,4 +1,7 @@
+import { Chain } from '../view/chain/chain';
+import { Footer } from '../view/footer/footer';
 import { Header } from '../view/header/header';
+import { Products } from '../view/products/products';
 
 export class App {
   private rootElement: HTMLElement;
@@ -11,6 +14,18 @@ export class App {
     const header: Header = new Header();
     header.draw();
 
-    this.rootElement.append(header.node);
+    const main: HTMLElement = document.createElement('main');
+
+    const chain: Chain = new Chain();
+    chain.draw();
+
+    const products: Products = new Products();
+    products.draw();
+
+    const footer = new Footer();
+    footer.draw();
+
+    main.append(chain.node, products.node);
+    this.rootElement.append(header.node, main, footer.node);
   }
 }
