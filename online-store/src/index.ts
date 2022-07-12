@@ -3,7 +3,7 @@ import { IFilter } from './interface/types';
 import './styles/style.scss';
 
 export const filters: IFilter = {
-  sort: '',
+  sort: 'price-lowest',
   search: '',
   category: '',
   company: '',

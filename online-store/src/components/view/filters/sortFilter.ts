@@ -37,6 +37,7 @@ export class SortFilter extends BaseComponent {
       opt.textContent = desc;
       this.node.append(opt);
     });
+    (this.node as HTMLSelectElement).value = filters.sort;
 
     this.node.addEventListener('input', this.onChange);
   }
