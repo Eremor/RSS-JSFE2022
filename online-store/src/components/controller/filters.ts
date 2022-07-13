@@ -16,6 +16,7 @@ export class Filters {
   private filters = (): void => {
     this.sortFilter(this.data);
     this.searchFilter(this.data);
+    this.categoryFilter(this.data);
   };
 
   private sortFilter = (items: ICard[]) => {
@@ -37,5 +38,11 @@ export class Filters {
 
   private searchFilter = (items: ICard[]) => {
     this.data = [...items.filter((item: ICard) => item.name.includes(filters.search.toLowerCase()))];
+  };
+
+  private categoryFilter = (items: ICard[]) => {
+    this.data = [
+      ...items.filter((item: ICard) => (filters.category === '' ? item : item.category === filters.category)),
+    ];
   };
 }
