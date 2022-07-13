@@ -29,7 +29,7 @@ export class SortFilter extends BaseComponent {
   constructor() {
     super('select', ['sort__list']);
     this.node.id = 'sort';
-    this.node.setAttribute('desc', 'sort');
+    this.node.setAttribute('name', 'sort');
 
     this.values.forEach(({ value, desc }: OptionsData) => {
       const opt: HTMLOptionElement = document.createElement('option');

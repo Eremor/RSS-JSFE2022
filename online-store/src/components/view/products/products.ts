@@ -1,5 +1,6 @@
 import { Wrapper } from '../../shared/wrapper';
 import { BaseComponent } from '../baseComponent';
+import { QueryFilter } from '../filters/queryFilter';
 import './products.scss';
 
 export class Products extends BaseComponent {
@@ -12,6 +13,10 @@ export class Products extends BaseComponent {
 
     const filters: HTMLDivElement = document.createElement('div');
     filters.classList.add('products__filters', 'filters');
+
+    const queryFilter: QueryFilter = new QueryFilter();
+
+    filters.append(queryFilter.node);
 
     const field: HTMLDivElement = document.createElement('div');
     field.classList.add('products__field');

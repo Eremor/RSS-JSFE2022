@@ -7,7 +7,7 @@ export class Cards {
     container.innerHTML = '';
 
     data.forEach((card: ICard) => {
-      const { id, name, price, image, colors, company, description, category }: ICard = card;
+      const { id, name, price, image /*, colors, company, description, category*/ }: ICard = card;
 
       const body: HTMLDivElement = document.createElement('div');
       body.classList.add('sources__card', 'card');
@@ -47,7 +47,7 @@ export class Cards {
       content.append(title, cardPrice);
 
       body.append(imgContainer, overflow, content);
-      console.log(colors, company, description, category);
+      // console.log(colors, company, description, category);
 
       container.append(body);
     });
