@@ -8,6 +8,15 @@ export class Cards {
 
     const cardList: ICard[] = callback(data);
 
+    if (cardList.length === 0) {
+      const notFound: HTMLParagraphElement = document.createElement('p');
+      notFound.classList.add('card__not-found');
+      notFound.textContent = 'Sorry, no matches found';
+
+      container.append(notFound);
+      return;
+    }
+
     cardList.forEach((card: ICard) => {
       const { id, name, price, image /*, colors, company, description, category*/ }: ICard = card;
 

@@ -17,21 +17,20 @@ export class QueryFilter extends BaseComponent {
 
     this.node.append(input, btn);
 
-    btn.addEventListener('click', this.clearQuery);
-    input.addEventListener('input', this.onChange);
+    btn.addEventListener('click', (e: Event) => this.clearQuery(e, input));
+    input.addEventListener('input', (e: Event) => this.onChange(e, btn));
   }
 
-  private clearQuery = (e: Event): void => {
+  private clearQuery = (e: Event, query: HTMLInputElement): void => {
     (e.target as HTMLButtonElement).classList.add('visually-hidden');
-    (this.node.querySelector('#query') as HTMLInputElement).value = '';
-    filters.search = '';
+    query.value = '';
+    query.dispatchEvent(new Event('input', { bubbles: true }));
   };
 
-  private onChange = (e: Event): void => {
+  private onChange = (e: Event, btn: HTMLButtonElement): void => {
     e.preventDefault();
     const value: string = (e.target as HTMLInputElement).value;
     filters.search = value;
-    const btn = <HTMLButtonElement>this.node.querySelector('.btn');
 
     if (value.length > 0) {
       btn.classList.remove('visually-hidden');

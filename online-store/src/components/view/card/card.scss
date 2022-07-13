@@ -83,4 +83,10 @@
     color: $primary-color;
     opacity: 0.9;
   }
+
+  &__not-found {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    color: $font-color;
+  }
 }
