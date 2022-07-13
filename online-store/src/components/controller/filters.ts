@@ -2,7 +2,7 @@ import { filters } from '../../index';
 import { ICard } from '../../interface/types';
 
 export class Filters {
-  private readonly data: ICard[];
+  private data: ICard[];
 
   constructor(data: ICard[]) {
     this.data = data;
@@ -15,6 +15,7 @@ export class Filters {
 
   private filters = (): void => {
     this.sortFilter(this.data);
+    this.searchFilter(this.data);
   };
 
   private sortFilter = (items: ICard[]) => {
@@ -32,5 +33,9 @@ export class Filters {
         items.sort((a: ICard, b: ICard) => (a.name > b.name ? -1 : 1));
         break;
     }
+  };
+
+  private searchFilter = (items: ICard[]) => {
+    this.data = [...items.filter((item: ICard) => item.name.includes(filters.search.toLowerCase()))];
   };
 }
