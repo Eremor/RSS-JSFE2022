@@ -38,12 +38,12 @@ export class App {
     sort.draw();
 
     const cards: Cards = new Cards();
-    this.controller.getCards((data: ICard[]) => cards.draw(data as ICard[]));
+    this.controller.getCards((data: ICard[]) => cards.draw(data, this.controller.filters));
 
     products.node.addEventListener('input', (e: Event) => {
       console.log(e.target);
       console.log(filters);
-      this.controller.getCards((data: ICard[]) => cards.draw(data as ICard[]));
+      this.controller.getCards((data: ICard[]) => cards.draw(data, this.controller.filters));
     });
   }
 }

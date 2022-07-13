@@ -2,11 +2,13 @@ import { ICard } from '../../../interface/types';
 import './card.scss';
 
 export class Cards {
-  public draw = (data: ICard[]): void => {
+  public draw = (data: ICard[], callback: (data: ICard[]) => ICard[]): void => {
     const container = <HTMLDivElement>document.querySelector('.sources');
     container.innerHTML = '';
 
-    data.forEach((card: ICard) => {
+    const cardList: ICard[] = callback(data);
+
+    cardList.forEach((card: ICard) => {
       const { id, name, price, image /*, colors, company, description, category*/ }: ICard = card;
 
       const body: HTMLDivElement = document.createElement('div');
