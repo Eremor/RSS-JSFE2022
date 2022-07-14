@@ -1,6 +1,7 @@
 import { Wrapper } from '../../shared/wrapper';
 import { BaseComponent } from '../baseComponent';
 import { CategoryFilter } from '../filters/categoryFilter';
+import { ClearButton } from '../filters/clearButton';
 import { ColorsFilter } from '../filters/colorsFilter';
 import { CompanyFilter } from '../filters/companyFilter';
 import { QueryFilter } from '../filters/queryFilter';
@@ -22,7 +23,9 @@ export class Products extends BaseComponent {
     const companyFilter: CompanyFilter = new CompanyFilter();
     const colorsFilter: ColorsFilter = new ColorsFilter();
 
-    filters.append(queryFilter.node, categoryFilter.node, companyFilter.node, colorsFilter.node);
+    const clearButton: ClearButton = new ClearButton();
+
+    filters.append(queryFilter.node, categoryFilter.node, companyFilter.node, colorsFilter.node, clearButton.node);
 
     const field: HTMLDivElement = document.createElement('div');
     field.classList.add('products__field');
