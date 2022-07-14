@@ -17,9 +17,10 @@ export class Filters {
     this.sortFilter(this.data);
     this.searchFilter(this.data);
     this.categoryFilter(this.data);
+    this.companyFilter(this.data);
   };
 
-  private sortFilter = (items: ICard[]) => {
+  private sortFilter = (items: ICard[]): void => {
     switch (filters.sort) {
       case 'price-lowest':
         items.sort((a: ICard, b: ICard) => (a.price > b.price ? 1 : -1));
@@ -36,13 +37,17 @@ export class Filters {
     }
   };
 
-  private searchFilter = (items: ICard[]) => {
+  private searchFilter = (items: ICard[]): void => {
     this.data = [...items.filter((item: ICard) => item.name.includes(filters.search.toLowerCase()))];
   };
 
-  private categoryFilter = (items: ICard[]) => {
+  private categoryFilter = (items: ICard[]): void => {
     this.data = [
       ...items.filter((item: ICard) => (filters.category === '' ? item : item.category === filters.category)),
     ];
+  };
+
+  private companyFilter = (items: ICard[]): void => {
+    this.data = [...items.filter((item: ICard) => (filters.company === '' ? item : item.company === filters.company))];
   };
 }
