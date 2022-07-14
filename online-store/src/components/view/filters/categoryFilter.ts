@@ -55,10 +55,10 @@ export class CategoryFilter extends BaseFilterComponent {
       }
 
       list.append(item);
-      list.addEventListener('click', this.changeCategory);
     });
 
     this.node.append(list);
+    list.addEventListener('click', this.changeCategory);
   }
 
   private changeCategory = (e: Event): void => {

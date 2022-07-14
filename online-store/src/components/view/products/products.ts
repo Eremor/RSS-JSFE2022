@@ -1,6 +1,7 @@
 import { Wrapper } from '../../shared/wrapper';
 import { BaseComponent } from '../baseComponent';
 import { CategoryFilter } from '../filters/categoryFilter';
+import { ColorsFilter } from '../filters/colorsFilter';
 import { CompanyFilter } from '../filters/companyFilter';
 import { QueryFilter } from '../filters/queryFilter';
 import './products.scss';
@@ -19,8 +20,9 @@ export class Products extends BaseComponent {
     const queryFilter: QueryFilter = new QueryFilter();
     const categoryFilter: CategoryFilter = new CategoryFilter();
     const companyFilter: CompanyFilter = new CompanyFilter();
+    const colorsFilter: ColorsFilter = new ColorsFilter();
 
-    filters.append(queryFilter.node, categoryFilter.node, companyFilter.node);
+    filters.append(queryFilter.node, categoryFilter.node, companyFilter.node, colorsFilter.node);
 
     const field: HTMLDivElement = document.createElement('div');
     field.classList.add('products__field');

@@ -18,6 +18,7 @@ export class Filters {
     this.searchFilter(this.data);
     this.categoryFilter(this.data);
     this.companyFilter(this.data);
+    this.colorFilter(this.data);
   };
 
   private sortFilter = (items: ICard[]): void => {
@@ -49,5 +50,21 @@ export class Filters {
 
   private companyFilter = (items: ICard[]): void => {
     this.data = [...items.filter((item: ICard) => (filters.company === '' ? item : item.company === filters.company))];
+  };
+
+  private colorFilter = (items: ICard[]): void => {
+    this.data = [
+      ...items.filter((item: ICard) => {
+        if (filters.colors === '') {
+          return item;
+        } else {
+          for (let i = 0; i < item.colors.length; i++) {
+            if (filters.colors === item.colors[i]) {
+              return item;
+            }
+          }
+        }
+      }),
+    ];
   };
 }
