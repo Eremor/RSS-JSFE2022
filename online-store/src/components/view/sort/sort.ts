@@ -4,6 +4,7 @@ import './sort.scss';
 export class Sort {
   public draw = (): void => {
     const container = <HTMLDivElement>document.querySelector('.sort');
+    container.innerHTML = '';
 
     const value: HTMLSpanElement = document.createElement('span');
     value.classList.add('sort__value');

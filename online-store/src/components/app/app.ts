@@ -1,16 +1,14 @@
-import { filters } from '../../index';
-import { ICard } from '../../interface/types';
 import { Controller } from '../controller/controller';
-import { Cards } from '../view/card/cards';
+import { View } from '../view/appView';
 import { Chain } from '../view/chain/chain';
 import { Footer } from '../view/footer/footer';
 import { Header } from '../view/header/header';
 import { Products } from '../view/products/products';
-import { Sort } from '../view/sort/sort';
 
 export class App {
   private rootElement: HTMLElement;
   private controller: Controller = new Controller();
+  private view: View = new View();
 
   constructor(rootElement: HTMLElement) {
     this.rootElement = rootElement;
@@ -34,16 +32,10 @@ export class App {
     main.append(chain.node, products.node);
     this.rootElement.append(header.node, main, footer.node);
 
-    const sort: Sort = new Sort();
-    sort.draw();
+    this.view.draw(this.controller, products.node);
 
-    const cards: Cards = new Cards();
-    this.controller.getCards((data: ICard[]) => cards.draw(data, this.controller.filters));
-
-    products.node.addEventListener('input', (e: Event) => {
-      console.log(e.target);
-      console.log(filters);
-      this.controller.getCards((data: ICard[]) => cards.draw(data, this.controller.filters));
+    products.node.addEventListener('input', () => {
+      this.view.draw(this.controller, products.node);
     });
   }
 }
