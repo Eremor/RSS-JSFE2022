@@ -7,7 +7,7 @@ export class ClearButton extends BaseComponent {
     category: '',
     colors: '',
     company: '',
-    price: '',
+    price: '0 3100',
     search: '',
     sort: 'price-lowest',
   };

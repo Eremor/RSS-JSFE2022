@@ -8,7 +8,7 @@ export const filters: IFilter = {
   category: '',
   company: '',
   colors: '',
-  price: '',
+  price: '0 3100',
 };
 
 const app = new App(document.body);

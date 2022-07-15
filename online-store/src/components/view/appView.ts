@@ -6,6 +6,7 @@ import { CategoryFilter } from './filters/categoryFilter';
 import { ClearButton } from './filters/clearButton';
 import { ColorsFilter } from './filters/colorsFilter';
 import { CompanyFilter } from './filters/companyFilter';
+import { PriceFilter } from './filters/priceFilter';
 import { QueryFilter } from './filters/queryFilter';
 import { Sort } from './sort/sort';
 
@@ -21,6 +22,7 @@ export class View {
     const categoryFilter: CategoryFilter = new CategoryFilter();
     const companyFilter: CompanyFilter = new CompanyFilter();
     const colorsFilter: ColorsFilter = new ColorsFilter();
+    const priceFilter: PriceFilter = new PriceFilter();
 
     const clearButton: ClearButton = new ClearButton();
 
@@ -29,6 +31,7 @@ export class View {
       categoryFilter.node,
       companyFilter.node,
       colorsFilter.node,
+      priceFilter.node,
       clearButton.node
     );
 
