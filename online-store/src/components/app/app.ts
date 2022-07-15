@@ -1,3 +1,4 @@
+import { filters } from '../..';
 import { Controller } from '../controller/controller';
 import { View } from '../view/appView';
 import { Chain } from '../view/chain/chain';
@@ -36,6 +37,9 @@ export class App {
 
     products.node.addEventListener('input', () => {
       this.view.draw(this.controller, products.node);
+      if (filters.search !== '') {
+        (document.querySelector('.query__input') as HTMLInputElement).focus();
+      }
     });
   }
 }

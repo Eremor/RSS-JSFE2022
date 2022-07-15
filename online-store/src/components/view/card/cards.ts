@@ -17,6 +17,9 @@ export class Cards {
       return;
     }
 
+    const quantityProducts = <HTMLElement>document.querySelector('.sort__value');
+    quantityProducts.textContent = `${cardList.length}`;
+
     cardList.forEach((card: ICard) => {
       const { id, name, price, image /*, colors, company, description, category*/ }: ICard = card;
 

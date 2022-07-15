@@ -1,4 +1,3 @@
-import { filters } from '../../index';
 import { ICard } from '../../interface/types';
 import { Controller } from '../controller/controller';
 import { Cards } from './card/cards';
@@ -38,9 +37,7 @@ export class View {
     const cards: Cards = new Cards();
     controller.getCards((data: ICard[]) => cards.draw(data, controller.filters));
 
-    rootElement.addEventListener('input', (e: Event) => {
-      console.log(e.target);
-      console.log(filters);
+    rootElement.addEventListener('input', () => {
       controller.getCards((data: ICard[]) => cards.draw(data, controller.filters));
     });
   };

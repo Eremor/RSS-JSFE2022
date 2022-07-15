@@ -11,6 +11,7 @@ export class QueryFilter extends BaseComponent {
     input.id = 'query';
     input.placeholder = 'Search';
     input.setAttribute('name', 'query');
+    input.value = filters.search;
 
     const btn: HTMLButtonElement = document.createElement('button');
     btn.classList.add('query__btn', 'btn', 'visually-hidden');

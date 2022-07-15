@@ -9,7 +9,6 @@ export class Sort {
     const value: HTMLSpanElement = document.createElement('span');
     value.classList.add('sort__value');
     value.textContent = '0';
-    value.setAttribute('data-count', 'count');
 
     const count: HTMLParagraphElement = document.createElement('p');
     count.classList.add('sort__count');
