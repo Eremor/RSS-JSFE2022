@@ -1,27 +1,27 @@
-import { PriceSlider } from '../slider/priceSlider';
-import { BaseFilterComponent } from './baseFilterComponent';
+import { filters } from '../../..';
+import { YearSlider } from '../slider/yearSlider';
 import * as noUiSlider from 'nouislider';
-import { filters } from '../../../index';
+import { BaseFilterComponent } from './baseFilterComponent';
 
-export class PriceFilter extends BaseFilterComponent {
+export class YearFilter extends BaseFilterComponent {
   constructor() {
-    super(['filters__price', 'price'], 'Price');
+    super(['filters__year', 'year'], 'Year');
 
-    const priceRange: string[] = filters.price.split(' ');
+    const yearRange: string[] = filters.year.split(' ');
 
     const container: HTMLDivElement = document.createElement('div');
-    container.classList.add('price__content');
+    container.classList.add('year__content');
 
     const desc: HTMLParagraphElement = document.createElement('p');
     desc.classList.add('price__cost');
-    desc.textContent = `$${priceRange[0]} - $${priceRange[1]}`;
+    desc.textContent = `${yearRange[0]} - ${yearRange[1]}`;
 
-    const priceSlider: PriceSlider = new PriceSlider();
+    const yearSlider: YearSlider = new YearSlider();
 
-    const slider = priceSlider.node as noUiSlider.target;
-    slider.noUiSlider?.set(priceRange);
+    const slider = yearSlider.node as noUiSlider.target;
+    slider.noUiSlider?.set(yearRange);
 
-    container.append(desc, priceSlider.node);
+    container.append(desc, yearSlider.node);
     this.node.append(container);
 
     slider.noUiSlider?.on('update', (values: Array<string | number>) => {
@@ -30,8 +30,8 @@ export class PriceFilter extends BaseFilterComponent {
       min = typeof min === 'number' ? min.toFixed() : min.slice(0, -3);
       max = typeof max === 'number' ? max.toFixed() : max.slice(0, -3);
 
-      desc.textContent = min === max ? `$${min}` : `$${min} - $${max}`;
-      filters.price = `${min} ${max}`;
+      desc.textContent = min === max ? `${min}` : `${min} - ${max}`;
+      filters.year = `${min} ${max}`;
     });
 
     slider.noUiSlider?.on('end', () => {

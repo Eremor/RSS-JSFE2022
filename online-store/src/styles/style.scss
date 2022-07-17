@@ -77,6 +77,10 @@ body {
   }
 
   &__price {
+    margin-bottom: 25px;
+  }
+
+  &__year {
     margin-bottom: 35px;
   }
 
@@ -280,6 +284,26 @@ body {
 }
 
 .price {
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+  }
+
+  &__cost {
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    color: $primary-color;
+  }
+}
+
+.year {
   display: flex;
   flex-direction: column;
 

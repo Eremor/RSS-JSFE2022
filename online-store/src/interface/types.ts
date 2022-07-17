@@ -6,6 +6,7 @@ export interface IFilter {
   colors: string;
   price: string;
   cart: string;
+  year: string;
 }
 
 export interface ICard {

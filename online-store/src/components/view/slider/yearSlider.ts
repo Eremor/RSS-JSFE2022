@@ -1,21 +1,21 @@
 import { BaseComponent } from '../baseComponent';
-import noUiSlider from 'nouislider';
+import * as noUiSlider from 'nouislider';
 import 'nouislider/dist/nouislider.css';
 import './slider.scss';
 
-export class PriceSlider extends BaseComponent {
+export class YearSlider extends BaseComponent {
   constructor() {
     super('div');
-    this.node.id = 'slider';
+    this.node.id = 'year-slider';
 
     noUiSlider.create(this.node, {
-      start: ['0', '3100'],
+      start: ['2018', '2022'],
       connect: true,
       range: {
-        min: 0,
-        max: 3100,
+        min: 2018,
+        max: 2022,
       },
-      step: 10,
+      step: 1,
     });
   }
 }

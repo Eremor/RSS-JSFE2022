@@ -20,6 +20,7 @@ export class Filters {
     this.companyFilter(this.data);
     this.colorFilter(this.data);
     this.priceFilter(this.data);
+    this.yearFilter(this.data);
   };
 
   private sortFilter = (items: ICard[]): void => {
@@ -82,5 +83,10 @@ export class Filters {
         (item: ICard): boolean => Math.round(item.price / 100) >= +min && Math.round(item.price / 100) <= +max
       ),
     ];
+  };
+
+  private yearFilter = (items: ICard[]): void => {
+    const [min, max]: string[] = filters.year.split(' ');
+    this.data = [...items.filter((item: ICard): boolean => item.year >= +min && item.year <= +max)];
   };
 }

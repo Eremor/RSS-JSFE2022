@@ -10,6 +10,7 @@ export const filters: IFilter = {
   colors: '',
   price: '0 3100',
   cart: '',
+  year: '2018 2022',
 };
 
 const app = new App(document.body);
