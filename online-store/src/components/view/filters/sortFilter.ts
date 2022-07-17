@@ -24,6 +24,14 @@ export class SortFilter extends BaseComponent {
       value: 'desc-z',
       desc: 'desc (Z-A)',
     },
+    {
+      value: 'newer',
+      desc: 'first newer',
+    },
+    {
+      value: 'older',
+      desc: 'first older',
+    },
   ];
 
   constructor() {

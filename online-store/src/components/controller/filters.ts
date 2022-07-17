@@ -36,6 +36,12 @@ export class Filters {
       case 'desc-z':
         items.sort((a: ICard, b: ICard) => (a.name > b.name ? -1 : 1));
         break;
+      case 'newer':
+        items.sort((a: ICard, b: ICard) => (a.year > b.year ? 1 : -1));
+        break;
+      case 'older':
+        items.sort((a: ICard, b: ICard) => (a.year > b.year ? -1 : 1));
+        break;
     }
   };
 

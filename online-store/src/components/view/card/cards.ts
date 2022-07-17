@@ -21,7 +21,7 @@ export class Cards {
     quantityProducts.textContent = `${cardList.length}`;
 
     cardList.forEach((card: ICard) => {
-      const { id, name, price, image /*, colors, company, description, category*/ }: ICard = card;
+      const { id, name, price, image /*, colors, company, description, category, year*/ }: ICard = card;
 
       const body: HTMLDivElement = document.createElement('div');
       body.classList.add('sources__card', 'card');

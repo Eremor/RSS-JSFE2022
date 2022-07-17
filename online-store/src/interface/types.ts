@@ -16,4 +16,5 @@ export interface ICard {
   company: string;
   description: string;
   category: string;
+  year: number;
 }
