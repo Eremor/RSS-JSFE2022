@@ -1,3 +1,4 @@
+import { filters } from '../../..';
 import { BaseComponent } from '../baseComponent';
 import './cart.scss';
 
@@ -16,7 +17,7 @@ export class Cart extends BaseComponent {
 
     const value: HTMLSpanElement = document.createElement('span');
     value.classList.add('cart__value');
-    value.textContent = '0';
+    value.textContent = `${filters.cart.length}`;
     value.setAttribute('data-count', 'count');
 
     count.append(value);

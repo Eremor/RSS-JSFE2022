@@ -107,9 +107,9 @@ export class Popup extends BaseComponent {
 
     if (element.classList.contains('popup__btn--remove')) {
       let newCartArr = '';
-      const x = cartArr.filter((el: string) => el !== this.card.id);
+      const filterValues = cartArr.filter((el: string) => el !== this.card.id);
 
-      x.forEach((el: string) => {
+      filterValues.forEach((el: string) => {
         newCartArr.length === 0 ? (newCartArr = el) : (newCartArr += ` ${el}`);
       });
       filters.cart = newCartArr;
@@ -120,9 +120,24 @@ export class Popup extends BaseComponent {
           isSpace = true;
         }
       }
-      filters.cart = isSpace ? this.card.id : filters.cart + ` ${this.card.id}`;
+      if (filters.cart.split(' ').length < 20) {
+        filters.cart = isSpace ? this.card.id : filters.cart + ` ${this.card.id}`;
+      } else {
+        alert('Sorry, all slots are full');
+      }
     }
 
+    this.drawCartValue();
     this.node.dispatchEvent(new Event('filter', { bubbles: true }));
+  };
+
+  private drawCartValue = (): void | never => {
+    const cartElement = <HTMLElement>document.querySelector('.cart__value');
+    const filterValues = filters.cart.split(' ').filter((el: string) => el !== '');
+    if (filterValues.length <= 20) {
+      cartElement.textContent = `${filterValues.length}`;
+    } else {
+      return;
+    }
   };
 }
