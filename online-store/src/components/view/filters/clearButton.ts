@@ -10,6 +10,7 @@ export class ClearButton extends BaseComponent {
     price: '0 3100',
     search: '',
     sort: 'price-lowest',
+    cart: filters.cart,
   };
 
   constructor() {

@@ -9,6 +9,7 @@ export const filters: IFilter = {
   company: '',
   colors: '',
   price: '0 3100',
+  cart: '',
 };
 
 const app = new App(document.body);

@@ -5,6 +5,7 @@ export interface IFilter {
   company: string;
   colors: string;
   price: string;
+  cart: string;
 }
 
 export interface ICard {

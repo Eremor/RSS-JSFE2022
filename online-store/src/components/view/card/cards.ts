@@ -1,4 +1,6 @@
+import { filters } from '../../..';
 import { ICard } from '../../../interface/types';
+import { Popup } from '../popup/popup';
 import './card.scss';
 
 export class Cards {
@@ -21,11 +23,20 @@ export class Cards {
     quantityProducts.textContent = `${cardList.length}`;
 
     cardList.forEach((card: ICard) => {
-      const { id, name, price, image /*, colors, company, description, category, year*/ }: ICard = card;
+      const { id, name, price, image }: ICard = card;
+
+      let isCart = false;
+      const cartArr = filters.cart.split(' ');
+      for (let i = 0; i < cartArr.length; i++) {
+        if (cartArr[i] === card.id) {
+          isCart = true;
+        }
+      }
 
       const body: HTMLDivElement = document.createElement('div');
       body.classList.add('sources__card', 'card');
       body.id = id;
+      isCart ? body.classList.add('card--active') : body.classList.remove('card--active');
 
       const imgContainer: HTMLDivElement = document.createElement('div');
       imgContainer.classList.add('card__img');
@@ -61,9 +72,18 @@ export class Cards {
       content.append(title, cardPrice);
 
       body.append(imgContainer, overflow, content);
-      // console.log(colors, company, description, category);
-
       container.append(body);
+
+      body.addEventListener('click', (e: Event) => this.onClick(e, card));
     });
+  };
+
+  private onClick = (e: Event, card: ICard): void => {
+    const target = <HTMLElement>e.target;
+    const parent = <HTMLElement>target.parentElement;
+    if (parent.classList.contains('card__btn')) {
+      const popup = new Popup(card);
+      popup.draw();
+    }
   };
 }

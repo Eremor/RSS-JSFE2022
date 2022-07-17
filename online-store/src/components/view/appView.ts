@@ -40,5 +40,9 @@ export class View {
     rootElement.addEventListener('input', () => {
       controller.getCards((data: ICard[]) => cards.draw(data, controller.filters));
     });
+
+    document.addEventListener('filter', () => {
+      controller.getCards((data: ICard[]) => cards.draw(data, controller.filters));
+    });
   };
 }
