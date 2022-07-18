@@ -19,7 +19,7 @@ export class Header extends BaseComponent {
     const nav: HTMLElement = document.createElement('nav');
     nav.classList.add('header__nav', 'nav');
 
-    this.links.forEach((link: string) => {
+    this.links.forEach((link: string): void => {
       const navLink: Link = new Link(['nav__link'], link, '#');
       nav.append(navLink.node);
     });

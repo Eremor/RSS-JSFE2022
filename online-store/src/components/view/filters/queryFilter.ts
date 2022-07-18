@@ -24,8 +24,8 @@ export class QueryFilter extends BaseComponent {
 
     this.node.append(input, btn);
 
-    btn.addEventListener('click', (e: Event) => this.clearQuery(e, input));
-    input.addEventListener('input', (e: Event) => this.onChange(e, btn));
+    btn.addEventListener('click', (e: Event): void => this.clearQuery(e, input));
+    input.addEventListener('input', (e: Event): void => this.onChange(e, btn));
   }
 
   private clearQuery = (e: Event, query: HTMLInputElement): void => {

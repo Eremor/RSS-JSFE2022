@@ -25,7 +25,7 @@ export class PriceFilter extends BaseFilterComponent {
     container.append(desc, priceSlider.node);
     this.node.append(container);
 
-    slider.noUiSlider?.on('update', (values: Array<string | number>) => {
+    slider.noUiSlider?.on('update', (values: Array<string | number>): void => {
       let [min, max]: Array<string | number> = values;
 
       min = typeof min === 'number' ? min.toFixed() : min.slice(0, -3);
@@ -35,11 +35,11 @@ export class PriceFilter extends BaseFilterComponent {
       filters.price = `${min} ${max}`;
     });
 
-    slider.noUiSlider?.on('end', () => {
+    slider.noUiSlider?.on('end', (): void => {
       this.node.dispatchEvent(new Event('input', { bubbles: true }));
     });
 
-    slider.noUiSlider?.on('change', () => {
+    slider.noUiSlider?.on('change', (): void => {
       this.node.dispatchEvent(new Event('input', { bubbles: true }));
       saveToLocalStorage();
     });

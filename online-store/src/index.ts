@@ -16,9 +16,8 @@ export const filters: IFilter = {
 };
 
 if (window.localStorage.getItem('filters')) {
-  console.log('load filters');
   getFromLocalStorage();
 }
 
-const app = new App(document.body);
+const app: App = new App(document.body);
 app.start();

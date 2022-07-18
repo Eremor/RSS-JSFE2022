@@ -8,7 +8,7 @@ export class Controller extends Loader {
   }
 
   public filters(data: ICard[]): ICard[] {
-    const filters = new Filters(data);
+    const filters: Filters = new Filters(data);
     return filters.getData();
   }
 }

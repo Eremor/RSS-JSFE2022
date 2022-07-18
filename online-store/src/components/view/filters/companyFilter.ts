@@ -37,7 +37,7 @@ export class CompanyFilter extends BaseFilterComponent {
     const list: HTMLSelectElement = document.createElement('select');
     list.classList.add('company__list');
 
-    this.values.forEach(({ value, desc }: CompanyType) => {
+    this.values.forEach(({ value, desc }: CompanyType): void => {
       const opt: HTMLOptionElement = document.createElement('option');
       opt.classList.add('company__item');
       opt.value = value;

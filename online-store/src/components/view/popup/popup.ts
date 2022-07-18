@@ -53,7 +53,7 @@ export class Popup extends BaseComponent {
     colorsTitle.textContent = 'Colors';
     colorsContainer.append(colorsTitle);
 
-    this.card.colors.forEach((item: string) => {
+    this.card.colors.forEach((item: string): void => {
       const colorItem: HTMLSpanElement = document.createElement('span');
       colorItem.classList.add('popup__color');
       colorItem.style.backgroundColor = item;
@@ -68,7 +68,7 @@ export class Popup extends BaseComponent {
     btn.classList.add('popup__btn');
 
     const cartArr: string[] = filters.cart.split(' ');
-    const isCart = cartArr.find((value: string) => value === this.card.id);
+    const isCart = <string>cartArr.find((value: string): boolean => value === this.card.id);
 
     if (isCart) {
       btn.textContent = 'Remove from cart';
@@ -108,9 +108,9 @@ export class Popup extends BaseComponent {
 
     if (element.classList.contains('popup__btn--remove')) {
       let newCartArr = '';
-      const filterValues = cartArr.filter((el: string) => el !== this.card.id);
+      const filterValues = <string[]>cartArr.filter((el: string): boolean => el !== this.card.id);
 
-      filterValues.forEach((el: string) => {
+      filterValues.forEach((el: string): void => {
         newCartArr.length === 0 ? (newCartArr = el) : (newCartArr += ` ${el}`);
       });
       filters.cart = newCartArr;

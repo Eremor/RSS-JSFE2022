@@ -4,7 +4,7 @@ import { Popup } from '../popup/popup';
 import './card.scss';
 
 export class Cards {
-  public draw = (data: ICard[], callback: (data: ICard[]) => ICard[]): void => {
+  public draw = (data: ICard[], callback: (data: ICard[]) => ICard[]): void | never => {
     const container = <HTMLDivElement>document.querySelector('.sources');
     container.innerHTML = '';
 
@@ -22,7 +22,7 @@ export class Cards {
     const quantityProducts = <HTMLElement>document.querySelector('.sort__value');
     quantityProducts.textContent = `${cardList.length}`;
 
-    cardList.forEach((card: ICard) => {
+    cardList.forEach((card: ICard): void => {
       const { id, name, price, image }: ICard = card;
 
       let isCart = false;
@@ -82,7 +82,7 @@ export class Cards {
     const target = <HTMLElement>e.target;
     const parent = <HTMLElement>target.parentElement;
     if (parent.classList.contains('card__btn')) {
-      const popup = new Popup(card);
+      const popup: Popup = new Popup(card);
       popup.draw();
     }
   };

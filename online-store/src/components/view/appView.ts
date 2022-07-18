@@ -43,11 +43,11 @@ export class View {
     const cards: Cards = new Cards();
     controller.getCards((data: ICard[]) => cards.draw(data, controller.filters));
 
-    rootElement.addEventListener('input', () => {
+    rootElement.addEventListener('input', (): void => {
       controller.getCards((data: ICard[]) => cards.draw(data, controller.filters));
     });
 
-    document.addEventListener('filter', () => {
+    document.addEventListener('filter', (): void => {
       controller.getCards((data: ICard[]) => cards.draw(data, controller.filters));
     });
   };

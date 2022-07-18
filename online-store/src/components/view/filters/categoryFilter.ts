@@ -45,7 +45,7 @@ export class CategoryFilter extends BaseFilterComponent {
     const list: HTMLDivElement = document.createElement('div');
     list.classList.add('category__list');
 
-    this.values.forEach(({ value, desc }: CategoryType) => {
+    this.values.forEach(({ value, desc }: CategoryType): void => {
       const item: HTMLButtonElement = document.createElement('button');
       item.classList.add('category__item');
       item.textContent = desc;

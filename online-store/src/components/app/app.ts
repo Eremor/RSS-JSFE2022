@@ -35,7 +35,7 @@ export class App {
 
     this.view.draw(this.controller, products.node);
 
-    products.node.addEventListener('input', () => {
+    products.node.addEventListener('input', (): void => {
       this.view.draw(this.controller, products.node);
       if (filters.search !== '') {
         (document.querySelector('.query__input') as HTMLInputElement).focus();

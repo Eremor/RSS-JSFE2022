@@ -4,7 +4,6 @@ import { IFilter } from '../interface/types';
 export const saveToLocalStorage = (): void => {
   const filtersValue: string = JSON.stringify(filters);
   window.localStorage.setItem('filters', filtersValue);
-  console.log('save');
 };
 
 export const getFromLocalStorage = (): void => {
