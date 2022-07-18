@@ -7,6 +7,7 @@ export interface IFilter {
   price: string;
   cart: string;
   year: string;
+  popular: string;
 }
 
 export interface ICard {
@@ -19,4 +20,5 @@ export interface ICard {
   description: string;
   category: string;
   year: number;
+  popular: boolean;
 }

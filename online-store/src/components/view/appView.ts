@@ -5,6 +5,7 @@ import { CategoryFilter } from './filters/categoryFilter';
 import { ClearButton } from './filters/clearButton';
 import { ColorsFilter } from './filters/colorsFilter';
 import { CompanyFilter } from './filters/companyFilter';
+import { PopularFilter } from './filters/popularFilter';
 import { PriceFilter } from './filters/priceFilter';
 import { QueryFilter } from './filters/queryFilter';
 import { YearFilter } from './filters/yearFilter';
@@ -24,6 +25,7 @@ export class View {
     const colorsFilter: ColorsFilter = new ColorsFilter();
     const priceFilter: PriceFilter = new PriceFilter();
     const yearFilter: YearFilter = new YearFilter();
+    const popularFilter: PopularFilter = new PopularFilter();
 
     const clearButton: ClearButton = new ClearButton();
 
@@ -34,6 +36,7 @@ export class View {
       colorsFilter.node,
       priceFilter.node,
       yearFilter.node,
+      popularFilter.node,
       clearButton.node
     );
 

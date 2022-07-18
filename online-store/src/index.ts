@@ -11,6 +11,7 @@ export const filters: IFilter = {
   price: '0 3100',
   cart: '',
   year: '2018 2022',
+  popular: 'false',
 };
 
 const app = new App(document.body);

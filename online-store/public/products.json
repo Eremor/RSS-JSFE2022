@@ -8,7 +8,8 @@
     "company": "marcos",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "office",
-    "year": 2022
+    "year": 2022,
+    "popular": true
   },
   {
     "id": "recEHmzvupvT8ZONH",
@@ -19,7 +20,8 @@
     "company": "liddy",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "living room",
-    "year": 2019
+    "year": 2019,
+    "popular": true
   },
   {
     "id": "rec5NBwZ5zCD9nfF0",
@@ -30,7 +32,8 @@
     "company": "liddy",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "kitchen",
-    "year": 2018
+    "year": 2018,
+    "popular": false
   },
   {
     "id": "recd1jIVIEChmiwhe",
@@ -41,7 +44,8 @@
     "company": "marcos",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "bedroom",
-    "year": 2018
+    "year": 2018,
+    "popular": false
   },
   {
     "id": "recoM2MyHJGHLVi5l",
@@ -52,7 +56,8 @@
     "company": "liddy",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "dining",
-    "year": 2020
+    "year": 2020,
+    "popular": true
   },
   {
     "id": "recotY5Nh00DQFdkm",
@@ -63,7 +68,8 @@
     "company": "ikea",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "dining",
-    "year": 2020
+    "year": 2020,
+    "popular": true
   },
   {
     "id": "rec1Ntk7siEEW9ha1",
@@ -74,31 +80,32 @@
     "company": "ikea",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "bedroom",
-    "year": 2021
+    "year": 2021,
+    "popular": true
   },
   {
     "id": "recNZ0koOqEmilmoz",
     "name": "entertainment center",
     "price": 59999,
     "image": "https://dl.airtable.com/.attachmentThumbnails/65708b701baa3a84883ad48301624b44/2de058af?ts=1656996717&userId=usrQMwWEPx18KgLcP&cs=530ed77fecd524d0",
-    "featured": true,
     "colors": ["#000", "#ff0000"],
     "company": "caressa",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "living room",
-    "year": 2022
+    "year": 2022,
+    "popular": false
   },
   {
     "id": "recrfxv3EwpvJwvjq",
     "name": "high-back bench",
     "price": 39999,
     "image": "https://dl.airtable.com/.attachmentThumbnails/1af97a4d3eb28563962d8e3520727ffc/1b9cc17f?ts=1656996717&userId=usrQMwWEPx18KgLcP&cs=c41df8bc5a563919",
-    "featured": true,
     "colors": ["#000", "#00ff00"],
     "company": "ikea",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "office",
-    "year": 2019
+    "year": 2019,
+    "popular": false
   },
   {
     "id": "recoW8ecgjtKx2Sj2",
@@ -109,7 +116,8 @@
     "company": "caressa",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "bedroom",
-    "year": 2018
+    "year": 2018,
+    "popular": true
   },
   {
     "id": "recEOA6qtDag1hRbU",
@@ -120,19 +128,20 @@
     "company": "caressa",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "office",
-    "year": 2021
+    "year": 2021,
+    "popular": true
   },
   {
     "id": "recoAJYUCuEKxcPSr",
     "name": "modern bookshelf",
     "price": 31999,
     "image": "https://dl.airtable.com/.attachmentThumbnails/1e4a818f5184993e430420a152315b40/873c7094?ts=1656996717&userId=usrQMwWEPx18KgLcP&cs=fd588f4654b65ca5",
-    "featured": true,
     "colors": ["#ffb900", "#ff0000", "#00ff00"],
     "company": "caressa",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "kids",
-    "year": 2022
+    "year": 2022,
+    "popular": false
   },
   {
     "id": "recQ0fMd8T0Vk211E",
@@ -143,7 +152,8 @@
     "company": "liddy",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "living room",
-    "year": 2021
+    "year": 2021,
+    "popular": true
   },
   {
     "id": "rec7CjDWKRgNQtrKe",
@@ -154,7 +164,8 @@
     "company": "ikea",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "living room",
-    "year": 2020
+    "year": 2020,
+    "popular": false
   },
   {
     "id": "recF0KpwlkF7e8kXO",
@@ -165,7 +176,8 @@
     "company": "liddy",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "living room",
-    "year": 2019
+    "year": 2019,
+    "popular": false
   },
   {
     "id": "recs5BSVU3qQrOj4E",
@@ -176,7 +188,8 @@
     "company": "marcos",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "living room",
-    "year": 2022
+    "year": 2022,
+    "popular": false
   },
   {
     "id": "recroK1VD8qVdMP5H",
@@ -187,31 +200,32 @@
     "company": "caressa",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "office",
-    "year": 2019
+    "year": 2019,
+    "popular": false
   },
   {
     "id": "rec7JInsuCEHgmaGe",
     "name": "utopia sofa",
     "price": 79999,
     "image": "https://dl.airtable.com/.attachmentThumbnails/5ebc46a9e31a09cbc6078190ab035abc/8480b064?ts=1656996717&userId=usrQMwWEPx18KgLcP&cs=633686c7fc4646ba",
-    "featured": true,
     "colors": ["#ff0000", "#00ff00"],
     "company": "liddy",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "living room",
-    "year": 2020
+    "year": 2020,
+    "popular": true
   },
   {
     "id": "rec3jeKnhInKHJuz2",
     "name": "vase table",
     "price": 120999,
     "image": "https://dl.airtable.com/.attachmentThumbnails/1e222e36e935db2695c33e3d30c2e482/91b542e0?ts=1656996717&userId=usrQMwWEPx18KgLcP&cs=bb81513d23662b80",
-    "featured": true,
     "colors": ["#ff0000"],
     "company": "marcos",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "office",
-    "year": 2021
+    "year": 2021,
+    "popular": false
   },
   {
     "id": "recv2ohxljlK2FZO7",
@@ -222,7 +236,8 @@
     "company": "ikea",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "bedroom",
-    "year": 2022
+    "year": 2022,
+    "popular": true
   },
   {
     "id": "recJIjREF3dlFi3sR",
@@ -233,7 +248,8 @@
     "company": "ikea",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "office",
-    "year": 2021
+    "year": 2021,
+    "popular": false
   },
   {
     "id": "recm7wC8TBVdU9oEL",
@@ -244,18 +260,19 @@
     "company": "ikea",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "office",
-    "year": 2019
+    "year": 2019,
+    "popular": false
   },
   {
     "id": "rectfNsySwAJeWDN2",
     "name": "wooden table",
     "price": 234999,
     "image": "https://dl.airtable.com/.attachmentThumbnails/e8c2f821d05b9e4e5aa450a19e62ffa5/271fc3f5?ts=1656996717&userId=usrQMwWEPx18KgLcP&cs=7d8f5778fd05c5c4",
-    "featured": true,
     "colors": ["#ffb900", "#ff0000"],
     "company": "caressa",
     "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     "category": "kitchen",
-    "year": 2021
+    "year": 2021,
+    "popular": true
   }
 ]

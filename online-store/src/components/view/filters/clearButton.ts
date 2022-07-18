@@ -12,6 +12,7 @@ export class ClearButton extends BaseComponent {
     sort: filters.sort,
     cart: filters.cart,
     year: '2018 2022',
+    popular: 'false',
   };
 
   constructor() {

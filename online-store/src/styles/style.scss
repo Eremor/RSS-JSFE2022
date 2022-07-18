@@ -88,6 +88,10 @@ body {
     margin-bottom: 35px;
   }
 
+  &__popular {
+    margin-bottom: 35px;
+  }
+
   &__btn {
     padding: 5px 10px;
     @include logo-font;
@@ -324,5 +328,53 @@ body {
     font-size: 1.6rem;
     line-height: 1.8rem;
     color: $primary-color;
+  }
+}
+
+.popular {
+  display: flex;
+  flex-direction: column;
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    position: relative;
+    padding-left: 25px;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    color: $font-color;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      content: '';
+      display: block;
+      width: 15px;
+      height: 15px;
+      border: 2px solid $primary-color;
+      border-radius: 5px;
+    }
+
+    &--active {
+      &::before {
+        background-color: $primary-color;
+      }
+
+      &::after {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        content: '';
+        display: block;
+        width: 15px;
+        height: 15px;
+        background: url('../assets/icons/check-mark.svg') center no-repeat;
+      }
+    }
   }
 }

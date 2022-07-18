@@ -21,6 +21,7 @@ export class Filters {
     this.colorFilter(this.data);
     this.priceFilter(this.data);
     this.yearFilter(this.data);
+    this.popularFilter(this.data);
   };
 
   private sortFilter = (items: ICard[]): void => {
@@ -88,5 +89,10 @@ export class Filters {
   private yearFilter = (items: ICard[]): void => {
     const [min, max]: string[] = filters.year.split(' ');
     this.data = [...items.filter((item: ICard): boolean => item.year >= +min && item.year <= +max)];
+  };
+
+  private popularFilter = (items: ICard[]): void => {
+    const isPopular = filters.popular === 'true';
+    this.data = isPopular ? [...items.filter((item: ICard): boolean => item.popular)] : [...items];
   };
 }
