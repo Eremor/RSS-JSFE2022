@@ -23,6 +23,14 @@
     width: 50%;
     border: none;
     border-top: 1px solid #cecece;
+
+    @media screen and (max-width: 1080px) {
+      width: 30%;
+    }
+
+    @media screen and (max-width: 860px) {
+      width: 10%;
+    }
   }
 
   &__text {
