@@ -17,6 +17,10 @@ export class QueryFilter extends BaseComponent {
     const btn: HTMLButtonElement = document.createElement('button');
     btn.classList.add('query__btn', 'btn', 'visually-hidden');
 
+    if (input.value.length > 0) {
+      btn.classList.remove('visually-hidden');
+    }
+
     this.node.append(input, btn);
 
     btn.addEventListener('click', (e: Event) => this.clearQuery(e, input));
