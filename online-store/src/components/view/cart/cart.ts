@@ -17,7 +17,7 @@ export class Cart extends BaseComponent {
 
     const value: HTMLSpanElement = document.createElement('span');
     value.classList.add('cart__value');
-    value.textContent = `${filters.cart.length}`;
+    value.textContent = `${filters.cart === '' ? '0' : filters.cart.split(' ').length}`;
     value.setAttribute('data-count', 'count');
 
     count.append(value);

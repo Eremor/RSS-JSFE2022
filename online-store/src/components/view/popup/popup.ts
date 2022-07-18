@@ -3,6 +3,7 @@ import { ICard } from '../../../interface/types';
 import { BaseComponent } from '../baseComponent';
 import { PopupOption } from './popupOption';
 import './popup.scss';
+import { saveToLocalStorage } from '../../../util/util';
 
 export class Popup extends BaseComponent {
   private card: ICard;
@@ -129,6 +130,7 @@ export class Popup extends BaseComponent {
 
     this.drawCartValue();
     this.node.dispatchEvent(new Event('filter', { bubbles: true }));
+    saveToLocalStorage();
   };
 
   private drawCartValue = (): void | never => {

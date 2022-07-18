@@ -1,4 +1,5 @@
 import { filters } from '../../../index';
+import { saveToLocalStorage } from '../../../util/util';
 import { BaseFilterComponent } from './baseFilterComponent';
 
 type CompanyType = {
@@ -53,5 +54,6 @@ export class CompanyFilter extends BaseFilterComponent {
   private onChange = (e: Event): void => {
     const value: string = (e.target as HTMLSelectElement).value;
     filters.company = value;
+    saveToLocalStorage();
   };
 }

@@ -1,6 +1,7 @@
 import { App } from './components/app/app';
 import { IFilter } from './interface/types';
 import './styles/style.scss';
+import { getFromLocalStorage } from './util/util';
 
 export const filters: IFilter = {
   sort: 'price-lowest',
@@ -13,6 +14,11 @@ export const filters: IFilter = {
   year: '2018 2022',
   popular: 'false',
 };
+
+if (window.localStorage.getItem('filters')) {
+  console.log('load filters');
+  getFromLocalStorage();
+}
 
 const app = new App(document.body);
 app.start();

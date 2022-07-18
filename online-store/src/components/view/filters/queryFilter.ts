@@ -1,4 +1,5 @@
 import { filters } from '../../../index';
+import { saveToLocalStorage } from '../../../util/util';
 import { BaseComponent } from '../baseComponent';
 
 export class QueryFilter extends BaseComponent {
@@ -37,6 +38,7 @@ export class QueryFilter extends BaseComponent {
     e.preventDefault();
     const value: string = (e.target as HTMLInputElement).value;
     filters.search = value;
+    saveToLocalStorage();
 
     if (value.length > 0) {
       btn.classList.remove('visually-hidden');

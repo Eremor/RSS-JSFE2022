@@ -2,6 +2,7 @@ import { filters } from '../../..';
 import { YearSlider } from '../slider/yearSlider';
 import * as noUiSlider from 'nouislider';
 import { BaseFilterComponent } from './baseFilterComponent';
+import { saveToLocalStorage } from '../../../util/util';
 
 export class YearFilter extends BaseFilterComponent {
   constructor() {
@@ -40,6 +41,7 @@ export class YearFilter extends BaseFilterComponent {
 
     slider.noUiSlider?.on('change', () => {
       this.node.dispatchEvent(new Event('input', { bubbles: true }));
+      saveToLocalStorage();
     });
   }
 }

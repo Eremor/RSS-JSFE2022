@@ -1,4 +1,5 @@
 import { filters } from '../../../index';
+import { saveToLocalStorage } from '../../../util/util';
 import { BaseFilterComponent } from './baseFilterComponent';
 
 type CategoryType = {
@@ -75,6 +76,7 @@ export class CategoryFilter extends BaseFilterComponent {
     target.classList.add('category__item--active');
     filters.category = <string>target.dataset.category;
 
+    saveToLocalStorage();
     parent.dispatchEvent(new Event('input', { bubbles: true }));
   };
 }

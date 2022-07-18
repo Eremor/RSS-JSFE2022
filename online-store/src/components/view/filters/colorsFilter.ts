@@ -1,4 +1,5 @@
 import { filters } from '../../../index';
+import { saveToLocalStorage } from '../../../util/util';
 import { BaseFilterComponent } from './baseFilterComponent';
 
 type ColorsType = {
@@ -85,6 +86,7 @@ export class ColorsFilter extends BaseFilterComponent {
 
     filters.colors = <string>target.dataset.color;
 
+    saveToLocalStorage();
     parent.dispatchEvent(new Event('input', { bubbles: true }));
   };
 }

@@ -1,5 +1,6 @@
 import { filters } from '../../../index';
 import { IFilter } from '../../../interface/types';
+import { saveToLocalStorage } from '../../../util/util';
 import { BaseComponent } from '../baseComponent';
 
 export class ClearButton extends BaseComponent {
@@ -25,6 +26,7 @@ export class ClearButton extends BaseComponent {
       filters[key as keyof typeof this.defaultFilter] = this.defaultFilter[key as keyof typeof this.defaultFilter];
     }
 
+    saveToLocalStorage();
     this.node.dispatchEvent(new Event('input', { bubbles: true }));
   };
 }

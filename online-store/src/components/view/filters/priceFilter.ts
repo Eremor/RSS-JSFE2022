@@ -2,6 +2,7 @@ import { PriceSlider } from '../slider/priceSlider';
 import { BaseFilterComponent } from './baseFilterComponent';
 import * as noUiSlider from 'nouislider';
 import { filters } from '../../../index';
+import { saveToLocalStorage } from '../../../util/util';
 
 export class PriceFilter extends BaseFilterComponent {
   constructor() {
@@ -40,6 +41,7 @@ export class PriceFilter extends BaseFilterComponent {
 
     slider.noUiSlider?.on('change', () => {
       this.node.dispatchEvent(new Event('input', { bubbles: true }));
+      saveToLocalStorage();
     });
   }
 }

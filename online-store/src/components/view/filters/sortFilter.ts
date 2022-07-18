@@ -1,4 +1,5 @@
 import { filters } from '../../../index';
+import { saveToLocalStorage } from '../../../util/util';
 import { BaseComponent } from '../baseComponent';
 
 type OptionsData = {
@@ -53,5 +54,6 @@ export class SortFilter extends BaseComponent {
   private onChange = (e: Event): void => {
     const value: string = (e.target as HTMLSelectElement).value;
     filters.sort = value;
+    saveToLocalStorage();
   };
 }

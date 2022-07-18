@@ -1,4 +1,5 @@
 import { filters } from '../../..';
+import { saveToLocalStorage } from '../../../util/util';
 import { BaseFilterComponent } from './baseFilterComponent';
 
 export class PopularFilter extends BaseFilterComponent {
@@ -34,5 +35,6 @@ export class PopularFilter extends BaseFilterComponent {
   private onToggle = (box: HTMLInputElement): void => {
     box.checked = !box.checked;
     filters.popular = `${box.checked}`;
+    saveToLocalStorage();
   };
 }
