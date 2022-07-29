@@ -6,6 +6,8 @@ export class WinnersPage extends BaseComponent<HTMLElement> {
   }
 
   public draw = (): void => {
+    this.node.innerHTML = '';
+
     const title: HTMLElement = document.createElement('h2');
     title.textContent = 'Winners page';
 

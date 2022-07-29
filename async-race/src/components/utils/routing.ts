@@ -5,7 +5,7 @@ export const getRouting = (routing: string[], callbacks: Array<() => void>): IRo
   for (let i = 0; i < routing.length; i += 1) {
     const rout: IRout = {
       name: routing[i],
-      onDraw: () => callbacks[i],
+      onDraw: callbacks[i],
     };
     routList.push(rout);
   }
