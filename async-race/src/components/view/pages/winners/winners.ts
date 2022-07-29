@@ -1,4 +1,4 @@
-import { BaseComponent } from '../baseComponent';
+import { BaseComponent } from '../../baseComponent';
 
 export class WinnersPage extends BaseComponent<HTMLElement> {
   constructor() {

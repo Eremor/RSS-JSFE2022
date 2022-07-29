@@ -2,8 +2,8 @@ import { IRout } from '../../types/types';
 import { Router } from '../controller/router';
 import { getRouting } from '../utils/routing';
 import { Header } from '../view/header/header';
-import { GaragePage } from '../view/pages/garage';
-import { WinnersPage } from '../view/pages/winners';
+import { GaragePage } from '../view/pages/garage/garage';
+import { WinnersPage } from '../view/pages/winners/winners';
 
 export class App {
   private readonly rootElement: HTMLElement;
