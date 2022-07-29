@@ -6,11 +6,11 @@ import { GaragePage } from '../view/pages/garage';
 import { WinnersPage } from '../view/pages/winners';
 
 export class App {
-  private rootElement: HTMLElement;
+  private readonly rootElement: HTMLElement;
 
-  private garage = new GaragePage();
+  private readonly garage = new GaragePage();
 
-  private winners = new WinnersPage();
+  private readonly winners = new WinnersPage();
 
   constructor(rootElement: HTMLElement) {
     this.rootElement = rootElement;
@@ -23,7 +23,7 @@ export class App {
     const main: HTMLElement = document.createElement('main');
 
     const routingNames: string[] = ['', 'garage', 'winners'];
-    const routingCallbacks = [
+    const routingCallbacks: Array<() => void> = [
       () => this.drawGaragePage(main),
       () => this.drawGaragePage(main),
       () => this.drawWinnersPage(main),
