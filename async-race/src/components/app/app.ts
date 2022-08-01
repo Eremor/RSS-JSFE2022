@@ -1,5 +1,5 @@
 import { IRout } from '../../types/types';
-import { Router } from '../controller/router';
+import { Router } from '../services/router';
 import { getRouting } from '../utils/routing';
 import { Header } from '../view/header/header';
 import { GaragePage } from '../view/pages/garage/garage';
