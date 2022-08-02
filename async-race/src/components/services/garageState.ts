@@ -2,11 +2,11 @@ import { observer } from '../utils/observer';
 import { store } from '../utils/stor';
 import { API } from './api';
 
-export class GarageState {
+class GarageState {
   private api = new API();
 
-  public updateCars = async () => {
-    const { cars, count } = await this.api.getCars(store.garagePage);
+  public updateCars = async (page: number) => {
+    const { cars, count } = await this.api.getCars(page);
 
     store.cars = cars;
     store.carsCount = count;
@@ -14,3 +14,5 @@ export class GarageState {
     observer.notify('update garage');
   };
 }
+
+export const garageState = new GarageState();

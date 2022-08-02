@@ -1,6 +1,9 @@
 import { IRout } from '../../types/types';
+import { garageState } from '../services/garageState';
 import { Router } from '../services/router';
+import { observer } from '../utils/observer';
 import { getRouting } from '../utils/routing';
+import { store } from '../utils/stor';
 import { Header } from '../view/header/header';
 import { GaragePage } from '../view/pages/garage/garage';
 import { WinnersPage } from '../view/pages/winners/winners';
@@ -34,6 +37,12 @@ export class App {
     router.changeRout();
 
     this.rootElement.append(header.node, main);
+    garageState.updateCars(store.garagePage);
+
+    observer.subscribe({
+      action: 'update garage',
+      callback: this.garage.draw,
+    });
   };
 
   private drawGaragePage = (parentElement: HTMLElement): void => {

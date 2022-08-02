@@ -1,13 +1,13 @@
 import { BaseComponent } from '../../baseComponent';
 import { Body } from './body/body';
 import { Menu } from './menu/menu';
+// import { observer } from '../../../utils/observer';
+// import { garageState } from '../../../services/garageState';
+import { Pagination } from '../../shared/pagination/pagination';
+import { store } from '../../../utils/stor';
 import './garage.scss';
-import { observer } from '../../../utils/observer';
-import { GarageState } from '../../../services/garageState';
 
 export class GaragePage extends BaseComponent<HTMLElement> {
-  private state = new GarageState();
-
   constructor() {
     super('section', ['garage']);
   }
@@ -19,14 +19,9 @@ export class GaragePage extends BaseComponent<HTMLElement> {
     menu.draw();
     const body = new Body();
     body.draw();
+    const pagination = new Pagination(store.garagePage, store.carsCount, 7);
+    pagination.draw();
 
-    observer.subscribe({
-      action: 'update garage',
-      callback: body.draw,
-    });
-
-    this.node.append(menu.node, body.node);
-
-    this.state.updateCars();
+    this.node.append(menu.node, body.node, pagination.node);
   };
 }
