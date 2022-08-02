@@ -1,5 +1,4 @@
 import { garageState } from '../../../services/garageState';
-// import { observer } from '../../../utils/observer';
 import { store } from '../../../utils/stor';
 import { BaseComponent } from '../../baseComponent';
 import { Button } from '../button/button';
@@ -46,7 +45,6 @@ export class Pagination extends BaseComponent<HTMLDivElement> {
       this.disabledButton(this.prevButton.node);
     }
     this.setPage(this.pageNumber);
-    // observer.notify('update garage');
   };
 
   private moveToNextPage = () => {
@@ -57,7 +55,6 @@ export class Pagination extends BaseComponent<HTMLDivElement> {
       this.disabledButton(this.nextButton.node);
     }
     this.setPage(this.pageNumber);
-    // observer.notify('update garage');
   };
 
   private activeButton = (button: HTMLButtonElement): void => {
