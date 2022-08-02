@@ -1,10 +1,13 @@
 import { BaseComponent } from '../../baseComponent';
-import { SubTitle } from '../../shared/heading/subtitle';
-import { Title } from '../../shared/heading/title';
-import './garage.scss';
+import { Body } from './body/body';
 import { Menu } from './menu/menu';
+import './garage.scss';
+import { observer } from '../../../utils/observer';
+import { GarageState } from '../../../services/garageState';
 
 export class GaragePage extends BaseComponent<HTMLElement> {
+  private state = new GarageState();
+
   constructor() {
     super('section', ['garage']);
   }
@@ -14,14 +17,16 @@ export class GaragePage extends BaseComponent<HTMLElement> {
 
     const menu = new Menu();
     menu.draw();
+    const body = new Body();
+    body.draw();
 
-    const body: HTMLDivElement = document.createElement('div');
-    body.classList.add('garage__body');
+    observer.subscribe({
+      action: 'update garage',
+      callback: body.draw,
+    });
 
-    const garageTitle: Title = new Title('Garage (4)');
-    const garagePageTitle: SubTitle = new SubTitle('Page #1');
+    this.node.append(menu.node, body.node);
 
-    body.append(garageTitle.node, garagePageTitle.node);
-    this.node.append(menu.node, body);
+    this.state.updateCars();
   };
 }

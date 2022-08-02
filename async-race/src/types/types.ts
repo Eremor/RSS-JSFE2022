@@ -19,3 +19,8 @@ export interface ICar {
   color: string;
   id?: number;
 }
+
+export type GetCarsType = {
+  cars: ICar[];
+  count: number;
+};

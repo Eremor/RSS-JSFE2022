@@ -1,0 +1,61 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/fonts';
+
+.engine {
+  margin-right: 10px;
+  display: flex;
+  align-self: flex-start;
+  height: 80%;
+
+  &__btn {
+    margin-top: 7px;
+    margin-right: 5px;
+    padding: 3px 7px;
+    padding-bottom: 10px;
+    flex-shrink: 0;
+    font-family: inherit;
+    font-weight: 900;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    &--start {
+      color: $primary-color;
+      border: 2px solid $primary-color;
+
+      &:hover {
+        color: $background-color;
+        background-color: $primary-color;
+      }
+    }
+
+    &--stop {
+      color: $secondary-color;
+      border: 2px solid $secondary-color;
+
+      &:hover {
+        color: $background-color;
+        background-color: $secondary-color;
+      }
+    }
+
+    &--disabled {
+      color: $disabled-color;
+      border-color: $disabled-color;
+      cursor: default;
+
+      &:hover {
+        color: $disabled-color;
+        background-color: transparent;
+      }
+    }
+  }
+}
