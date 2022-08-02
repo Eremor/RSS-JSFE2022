@@ -1,3 +1,5 @@
+import { garageState } from '../../../../services/garageState';
+import { observer } from '../../../../utils/observer';
 import { currentCar } from '../../../../utils/stor';
 import { BaseComponent } from '../../../baseComponent';
 import { Form } from '../../../shared/form/form';
@@ -14,9 +16,10 @@ export class Menu extends BaseComponent<HTMLDivElement> {
 
   public draw = () => {
     const { name, color } = currentCar;
-    this.createCarForm.draw();
     this.createCarForm.textValue = name;
     this.createCarForm.colorValue = color;
+
+    this.createCarForm.draw();
     this.updateCarForm.draw();
 
     const control = new Control();
@@ -31,7 +34,10 @@ export class Menu extends BaseComponent<HTMLDivElement> {
   };
 
   private createCar = () => {
-    console.log('create car');
+    const name = this.createCarForm.textValue;
+    const color = this.createCarForm.colorValue;
+    garageState.createCar(name, color);
+    observer.notify('update garage');
   };
 
   private updateCar = () => {

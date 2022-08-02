@@ -1,8 +1,6 @@
 import { BaseComponent } from '../../baseComponent';
 import { Body } from './body/body';
 import { Menu } from './menu/menu';
-// import { observer } from '../../../utils/observer';
-// import { garageState } from '../../../services/garageState';
 import { Pagination } from '../../shared/pagination/pagination';
 import { store } from '../../../utils/stor';
 import './garage.scss';

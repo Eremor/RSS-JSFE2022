@@ -1,3 +1,4 @@
+import { observer } from '../../../utils/observer';
 import { currentCar } from '../../../utils/stor';
 import { BaseComponent } from '../../baseComponent';
 import { Button } from '../button/button';
@@ -28,6 +29,7 @@ export class Form extends BaseComponent<HTMLFormElement> {
       e.preventDefault();
       callback();
       this.clear();
+      observer.notify('update garage');
     });
   };
 
@@ -47,7 +49,7 @@ export class Form extends BaseComponent<HTMLFormElement> {
     this.color.node.value = value;
   }
 
-  private clear = (): void => {
+  public clear = (): void => {
     this.textValue = '';
     this.colorValue = '#ffffff';
     currentCar.name = this.textValue;

@@ -13,7 +13,7 @@ export class Body extends BaseComponent<HTMLDivElement> {
   public draw = (): void => {
     this.node.innerHTML = '';
 
-    const title = new Title(`Garage ${store.carsCount}`);
+    const title = new Title(`Garage (${store.carsCount})`);
     const pageNumber = new SubTitle(`Page #${store.garagePage}`);
 
     const garageList = <HTMLUListElement>document.createElement('ul');
