@@ -41,4 +41,17 @@ export class API {
       })
     ).json();
   };
+
+  public updateCar = async (car: ICar): Promise<void> => {
+    const id = <number>car.id;
+    (
+      await fetch(`${this.garage}/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(car),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+    ).json();
+  };
 }

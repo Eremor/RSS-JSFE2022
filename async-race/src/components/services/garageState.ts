@@ -1,3 +1,4 @@
+import { ICar } from '../../types/types';
 import { observer } from '../utils/observer';
 import { store } from '../utils/stor';
 import { API } from './api';
@@ -25,6 +26,11 @@ class GarageState {
 
   public deleteCar = async (id: number): Promise<void> => {
     await this.api.deleteCar(id);
+    this.updateCars(store.garagePage);
+  };
+
+  public updateCar = async (car: ICar): Promise<void> => {
+    await this.api.updateCar(car);
     this.updateCars(store.garagePage);
   };
 }

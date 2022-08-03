@@ -15,21 +15,16 @@
     &:active {
       outline: none;
     }
-
-    &--disabled {
-      cursor: default;
-      background-color: $disabled-color;
-    }
   }
 
   &__color {
     appearance: none;
     border: none;
     cursor: pointer;
+  }
 
-    &--disabled {
-      cursor: default;
-      background-color: $disabled-color;
-    }
+  &--disabled {
+    cursor: default;
+    background-color: $disabled-color;
   }
 }

@@ -1,9 +1,12 @@
 import { BaseComponent } from '../../baseComponent';
 
 export class Input extends BaseComponent<HTMLInputElement> {
-  constructor(classes: string[], type: string, defaultValue: string) {
+  constructor(classes: string[], type: string) {
     super('input', [...classes]);
     this.node.setAttribute('type', type);
-    this.node.value = defaultValue;
   }
+
+  public draw = (defaultValue: string) => {
+    this.node.value = defaultValue;
+  };
 }

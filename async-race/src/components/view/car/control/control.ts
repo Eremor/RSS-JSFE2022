@@ -1,4 +1,7 @@
+import { ICar } from '../../../../types/types';
 import { garageState } from '../../../services/garageState';
+import { observer } from '../../../utils/observer';
+import { store } from '../../../utils/stor';
 import { BaseComponent } from '../../baseComponent';
 import { Button } from '../../shared/button/button';
 
@@ -27,7 +30,10 @@ export class CarControl extends BaseComponent<HTMLDivElement> {
   };
 
   private selectCar = () => {
-    console.log(this.node);
+    const selectCar = <ICar>store.cars.find((car: ICar) => car.id === this.id);
+    store.selectCar = selectCar;
+    store.isSelected = true;
+    observer.notify('update garage');
   };
 
   private removeCar = () => {
