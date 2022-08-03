@@ -21,7 +21,7 @@ export class Car extends BaseComponent<HTMLLIElement> {
   }
 
   public draw = () => {
-    const control = new CarControl(this.carName);
+    const control = new CarControl(this.carName, this.carId);
     control.draw();
 
     const road = new Road(this.carColor);

@@ -33,4 +33,12 @@ export class API {
       })
     ).json();
   };
+
+  public deleteCar = async (id: number): Promise<void> => {
+    (
+      await fetch(`${this.garage}/${id}`, {
+        method: 'DELETE',
+      })
+    ).json();
+  };
 }

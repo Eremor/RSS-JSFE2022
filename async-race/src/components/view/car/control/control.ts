@@ -1,12 +1,16 @@
+import { garageState } from '../../../services/garageState';
 import { BaseComponent } from '../../baseComponent';
 import { Button } from '../../shared/button/button';
 
 export class CarControl extends BaseComponent<HTMLDivElement> {
   private name: string;
 
-  constructor(name: string) {
+  private id: number;
+
+  constructor(name: string, id: number) {
     super('div', ['car__control']);
     this.name = name;
+    this.id = id;
   }
 
   public draw = (): void => {
@@ -27,6 +31,6 @@ export class CarControl extends BaseComponent<HTMLDivElement> {
   };
 
   private removeCar = () => {
-    console.log(this.node);
+    garageState.deleteCar(this.id);
   };
 }

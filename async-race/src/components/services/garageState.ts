@@ -22,6 +22,11 @@ class GarageState {
     }
     this.updateCars(store.garagePage);
   };
+
+  public deleteCar = async (id: number): Promise<void> => {
+    await this.api.deleteCar(id);
+    this.updateCars(store.garagePage);
+  };
 }
 
 export const garageState = new GarageState();
