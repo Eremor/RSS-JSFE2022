@@ -1,4 +1,3 @@
-import { observer } from '../../../utils/observer';
 import { currentCar } from '../../../utils/stor';
 import { BaseComponent } from '../../baseComponent';
 import { Button } from '../button/button';
@@ -25,12 +24,8 @@ export class Form extends BaseComponent<HTMLFormElement> {
   };
 
   public onSubmit = (callback: () => void): void => {
-    this.button.node.addEventListener('click', (e: Event) => {
-      e.preventDefault();
-      callback();
-      this.clear();
-      observer.notify('update garage');
-    });
+    this.button.onClick(callback);
+    this.clear();
   };
 
   public get textValue(): string {
@@ -49,7 +44,7 @@ export class Form extends BaseComponent<HTMLFormElement> {
     this.color.node.value = value;
   }
 
-  public clear = (): void => {
+  private clear = (): void => {
     this.textValue = '';
     this.colorValue = '#ffffff';
     currentCar.name = this.textValue;

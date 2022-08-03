@@ -20,6 +20,7 @@ class GarageState {
     } else {
       throw new Error('Please provide a name for the car');
     }
+    this.updateCars(store.garagePage);
   };
 }
 
