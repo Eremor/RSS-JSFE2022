@@ -1,8 +1,8 @@
 import { ICar } from '../../../types/types';
 import { BaseComponent } from '../baseComponent';
 import { CarControl } from './control/control';
-import './car.scss';
 import { Road } from './road/road';
+import './car.scss';
 
 export class Car extends BaseComponent<HTMLLIElement> {
   private carName: string;
@@ -24,7 +24,7 @@ export class Car extends BaseComponent<HTMLLIElement> {
     const control = new CarControl(this.carName, this.carId);
     control.draw();
 
-    const road = new Road(this.carColor);
+    const road = new Road(this.carColor, this.carId);
     road.draw();
 
     this.node.append(control.node, road.node);

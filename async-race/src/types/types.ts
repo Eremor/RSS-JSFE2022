@@ -1,3 +1,5 @@
+import { CarImage } from '../components/view/car/car-image/image';
+
 export interface IRout {
   name: string;
   onDraw: () => void;
@@ -17,4 +19,9 @@ export interface ICar {
 export type GetCarsType = {
   cars: ICar[];
   count: number;
+};
+
+export type DistanceType = {
+  car: HTMLElement;
+  flag: HTMLElement;
 };

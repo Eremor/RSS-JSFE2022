@@ -1,3 +1,4 @@
+import { IDriving, RaceType } from '../../types/irace';
 import { GetCarsType, ICar } from '../../types/types';
 
 export class API {
@@ -6,6 +7,8 @@ export class API {
   private garage = `${this.baseURL}/garage`;
 
   // private winners = `${this.baseURL}/winners`;
+
+  private engine = `${this.baseURL}/engine`;
 
   public getCars = async (page: number, limit = 7): Promise<GetCarsType> => {
     const res = await fetch(`${this.garage}?_page=${page}&_limit=${limit}`);
@@ -53,5 +56,29 @@ export class API {
         },
       })
     ).json();
+  };
+
+  public startCarEngine = async (id: number): Promise<IDriving> => {
+    const urlRequest = `${this.engine}?id=${id}&status=started`;
+    const res = await fetch(urlRequest, {
+      method: 'PATCH',
+    });
+    return res.json();
+  };
+
+  public stopCarEngine = async (id: number): Promise<void> => {
+    const urlRequest = `${this.engine}?id=${id}&status=stopped`;
+    await fetch(urlRequest, {
+      method: 'PATCH',
+    });
+  };
+
+  public race = async (id: number): Promise<RaceType> => {
+    const urlRequest = `${this.engine}?id=${id}&status=drive`;
+    const res: Response = await fetch(urlRequest, {
+      method: 'PATCH',
+    }).catch();
+
+    return res.status !== 200 ? { success: false } : { success: true };
   };
 }

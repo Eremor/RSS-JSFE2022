@@ -13,4 +13,6 @@ export const store: IStore = {
     color: '#ffffff',
   },
   isSelected: false,
+  isActiveEngine: false,
+  animation: [],
 };
