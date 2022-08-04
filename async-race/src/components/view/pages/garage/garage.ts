@@ -17,6 +17,7 @@ export class GaragePage extends BaseComponent<HTMLElement> {
     menu.draw();
     const body = new Body();
     body.draw();
+    console.log(store.carsCount);
     const pagination = new Pagination(store.garagePage, store.carsCount, 7);
     pagination.draw();
 

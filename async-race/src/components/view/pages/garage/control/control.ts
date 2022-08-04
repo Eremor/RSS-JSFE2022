@@ -1,3 +1,4 @@
+import { garageState } from '../../../../services/garageState';
 import { raceState } from '../../../../services/raceState';
 import { store } from '../../../../utils/stor';
 import { BaseComponent } from '../../../baseComponent';
@@ -25,7 +26,7 @@ export class Control extends BaseComponent<HTMLDivElement> {
 
     this.startRaceButton.onClick(this.startRace);
     this.resetRaceButton.onClick(this.resetRace);
-    this.generateCarsButton.onClick((e) => console.log(e.target, 'generate cars'));
+    this.generateCarsButton.onClick(this.generateCars);
   };
 
   private startRace = () => {
@@ -58,5 +59,9 @@ export class Control extends BaseComponent<HTMLDivElement> {
   private activeButton = (button: HTMLButtonElement): void => {
     button.classList.remove('btn--disabled');
     button.removeAttribute('disabled');
+  };
+
+  private generateCars = (): void => {
+    garageState.generateCars();
   };
 }

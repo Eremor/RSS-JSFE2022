@@ -1,6 +1,7 @@
 import { ICar } from '../../types/types';
 import { observer } from '../utils/observer';
 import { store } from '../utils/stor';
+import { generateRandomCars } from '../utils/utils';
 import { API } from './api';
 
 class GarageState {
@@ -31,6 +32,15 @@ class GarageState {
 
   public updateCar = async (car: ICar): Promise<void> => {
     await this.api.updateCar(car);
+    this.updateCars(store.garagePage);
+  };
+
+  public generateCars = async (): Promise<void> => {
+    const newCars: ICar[] = generateRandomCars(100);
+    newCars.forEach((newCar: ICar) => {
+      const { name, color } = newCar;
+      this.createCar(name, color);
+    });
     this.updateCars(store.garagePage);
   };
 }
