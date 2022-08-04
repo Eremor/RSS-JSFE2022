@@ -34,14 +34,12 @@ export class Engine extends BaseComponent<HTMLDivElement> {
   };
 
   private startEngine = () => {
-    console.log('start engine', this.id);
     store.isActiveEngine = true;
     this.isDisabled(store.isActiveEngine);
     raceState.startEngine(this.id, this.distance);
   };
 
   private stopEngine = () => {
-    console.log('stop engine');
     store.isActiveEngine = false;
     this.isDisabled(store.isActiveEngine);
     raceState.stopEngine(this.id, this.distance);

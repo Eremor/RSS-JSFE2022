@@ -37,6 +37,11 @@ export class CarControl extends BaseComponent<HTMLDivElement> {
   };
 
   private removeCar = () => {
+    store.selectCar = {
+      name: '',
+      color: '#ffffff',
+    };
+    store.isSelected = false;
     garageState.deleteCar(this.id);
   };
 }
