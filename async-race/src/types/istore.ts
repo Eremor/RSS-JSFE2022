@@ -10,4 +10,5 @@ export interface IStore {
   isSelected: boolean;
   isActiveEngine: boolean;
   animation: AnimationType[];
+  carsAtRace: HTMLElement[];
 }

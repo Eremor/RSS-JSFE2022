@@ -1,4 +1,3 @@
-import { DistanceType } from '../../../../types/types';
 import { BaseComponent } from '../../baseComponent';
 import { CarImage } from '../car-image/image';
 import { Engine } from '../engine/engine';
@@ -21,9 +20,7 @@ export class Road extends BaseComponent<HTMLDivElement> {
     const flag = <HTMLDivElement>document.createElement('div');
     flag.classList.add('road__flag');
 
-    const distance: DistanceType = { car: car.node, flag };
-
-    const engine = new Engine(distance, this.id);
+    const engine = new Engine(this.id);
     engine.draw();
 
     this.node.append(engine.node, car.node, flag);

@@ -30,6 +30,7 @@ export class Body extends BaseComponent<HTMLDivElement> {
       const carItem = new Car(car);
       carItem.draw();
 
+      store.carsAtRace.push(carItem.node);
       parent.append(carItem.node);
     });
   };

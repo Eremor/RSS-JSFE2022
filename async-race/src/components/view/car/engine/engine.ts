@@ -1,4 +1,3 @@
-import { DistanceType } from '../../../../types/types';
 import { raceState } from '../../../services/raceState';
 import { store } from '../../../utils/stor';
 import { BaseComponent } from '../../baseComponent';
@@ -6,17 +5,14 @@ import { Button } from '../../shared/button/button';
 import './engine.scss';
 
 export class Engine extends BaseComponent<HTMLDivElement> {
-  private distance: DistanceType;
-
   private id: number;
 
   private startEngineButton: Button;
 
   private stopEngineButton: Button;
 
-  constructor(distance: DistanceType, id: number) {
+  constructor(id: number) {
     super('div', ['engine']);
-    this.distance = distance;
     this.id = id;
 
     this.startEngineButton = new Button(['engine__btn', 'engine__btn--start'], 'A');
@@ -36,13 +32,13 @@ export class Engine extends BaseComponent<HTMLDivElement> {
   private startEngine = () => {
     store.isActiveEngine = true;
     this.isDisabled(store.isActiveEngine);
-    raceState.startEngine(this.id, this.distance);
+    raceState.startEngine(this.id);
   };
 
   private stopEngine = () => {
     store.isActiveEngine = false;
     this.isDisabled(store.isActiveEngine);
-    raceState.stopEngine(this.id, this.distance);
+    raceState.stopEngine(this.id);
   };
 
   private isDisabled = (isActive: boolean): void => {

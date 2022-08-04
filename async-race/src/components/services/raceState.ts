@@ -6,8 +6,8 @@ import { API } from './api';
 class RaceState {
   private api = new API();
 
-  public startEngine = async (id: number, distanceRoad: DistanceType): Promise<IRace> => {
-    const { car, flag } = distanceRoad;
+  public startEngine = async (id: number): Promise<IRace> => {
+    const { car, flag } = this.getRoad(id);
     const { distance, velocity } = await this.api.startCarEngine(id);
     const time: number = Math.floor(distance / velocity);
 
@@ -20,8 +20,8 @@ class RaceState {
     return { success, id, time };
   };
 
-  public stopEngine = async (id: number, distanceRoad: DistanceType): Promise<void> => {
-    const { car } = distanceRoad;
+  public stopEngine = async (id: number): Promise<void> => {
+    const { car } = this.getRoad(id);
 
     await this.api.stopCarEngine(id);
 
@@ -73,6 +73,17 @@ class RaceState {
     state.id = window.requestAnimationFrame(stepAnimation);
 
     return state;
+  };
+
+  private getRoad = (id: number): DistanceType => {
+    const carItem = <HTMLElement>store.carsAtRace.find((car: HTMLElement) => +car.id === id);
+
+    const road = <HTMLDivElement>carItem.children[1];
+
+    const car = <HTMLElement>road.children[1];
+    const flag = <HTMLElement>road.children[2];
+
+    return { car, flag };
   };
 }
 
