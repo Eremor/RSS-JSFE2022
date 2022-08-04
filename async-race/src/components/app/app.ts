@@ -7,6 +7,7 @@ import { store } from '../utils/stor';
 import { Header } from '../view/header/header';
 import { GaragePage } from '../view/pages/garage/garage';
 import { WinnersPage } from '../view/pages/winners/winners';
+import { Popup } from '../view/popup/popup';
 
 export class App {
   private readonly rootElement: HTMLElement;
@@ -61,6 +62,11 @@ export class App {
   };
 
   private showWinner = (): void => {
-    console.log('show winner');
+    const { name, time } = store.newWinner;
+
+    const popup = new Popup(name, time);
+    popup.draw();
+
+    this.rootElement.append(popup.node);
   };
 }
