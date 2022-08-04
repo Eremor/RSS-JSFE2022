@@ -1,3 +1,5 @@
+import { raceState } from '../../../../services/raceState';
+import { store } from '../../../../utils/stor';
 import { BaseComponent } from '../../../baseComponent';
 import { Button } from '../../../shared/button/button';
 
@@ -21,8 +23,40 @@ export class Control extends BaseComponent<HTMLDivElement> {
 
     this.resetRaceButton.node.disabled = true;
 
-    this.startRaceButton.onClick((e) => console.log(e.target, 'start race'));
-    this.resetRaceButton.onClick((e) => console.log(e.target, 'reset race'));
+    this.startRaceButton.onClick(this.startRace);
+    this.resetRaceButton.onClick(this.resetRace);
     this.generateCarsButton.onClick((e) => console.log(e.target, 'generate cars'));
+  };
+
+  private startRace = () => {
+    store.isRace = true;
+    this.isDisabled(store.isRace);
+    raceState.race();
+  };
+
+  private resetRace = () => {
+    store.isRace = false;
+    this.isDisabled(store.isRace);
+    raceState.resetRace();
+  };
+
+  private isDisabled = (isActive: boolean): void => {
+    if (isActive) {
+      this.disabledButton(this.startRaceButton.node);
+      this.activeButton(this.resetRaceButton.node);
+    } else {
+      this.activeButton(this.startRaceButton.node);
+      this.disabledButton(this.resetRaceButton.node);
+    }
+  };
+
+  private disabledButton = (button: HTMLButtonElement): void => {
+    button.classList.add('btn--disabled');
+    button.setAttribute('disabled', 'true');
+  };
+
+  private activeButton = (button: HTMLButtonElement): void => {
+    button.classList.remove('btn--disabled');
+    button.removeAttribute('disabled');
   };
 }

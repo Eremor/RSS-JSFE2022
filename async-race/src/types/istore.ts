@@ -9,6 +9,7 @@ export interface IStore {
   selectCar: ICar;
   isSelected: boolean;
   isActiveEngine: boolean;
+  isRace: boolean;
   animation: AnimationType[];
   carsAtRace: HTMLElement[];
 }

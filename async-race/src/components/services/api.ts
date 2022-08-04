@@ -77,7 +77,9 @@ export class API {
     const urlRequest = `${this.engine}?id=${id}&status=drive`;
     const res: Response = await fetch(urlRequest, {
       method: 'PATCH',
-    }).catch();
+    });
+
+    if (res.status === 500) console.error(`Oops!! The car with id="${id}" has a broken engine`);
 
     return res.status !== 200 ? { success: false } : { success: true };
   };

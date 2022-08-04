@@ -1,5 +1,5 @@
 import { AnimationType, IPositionElement, IRace } from '../../types/irace';
-import { DistanceType } from '../../types/types';
+import { DistanceType, ICar } from '../../types/types';
 import { store } from '../utils/stor';
 import { API } from './api';
 
@@ -31,6 +31,38 @@ class RaceState {
     if (store.animation[id]) {
       window.cancelAnimationFrame(store.animation[id].id);
     }
+  };
+
+  public race = async (): Promise<void> => {
+    Promise.all(store.cars)
+      .then((response: ICar[]) => {
+        const promises: Promise<IRace>[] = response.map((car: ICar) =>
+          this.startEngine(<number>car.id),
+        );
+
+        return promises;
+      })
+      .then((response: Promise<IRace>[]) => {
+        this.decideWinner(response);
+      })
+      .catch((err: string) => new Error(err));
+  };
+
+  private decideWinner = async (raceArray: Promise<IRace>[]): Promise<void> => {
+    Promise.all(raceArray)
+      .then((res: IRace[]) => {
+        const winner = res
+          .filter((data: IRace) => data.success)
+          .sort((a: IRace, b: IRace) => a.time - b.time)[0];
+        return winner;
+      })
+      .then((data) => console.log(data));
+  };
+
+  public resetRace = async (): Promise<void> => {
+    Promise.all(store.cars).then((response: ICar[]) => {
+      response.forEach((res: ICar) => this.stopEngine(<number>res.id));
+    });
   };
 
   private getPosition = (element: HTMLElement): IPositionElement => {

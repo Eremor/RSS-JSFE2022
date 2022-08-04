@@ -14,6 +14,7 @@ export const store: IStore = {
   },
   isSelected: false,
   isActiveEngine: false,
+  isRace: false,
   animation: [],
   carsAtRace: [],
 };
