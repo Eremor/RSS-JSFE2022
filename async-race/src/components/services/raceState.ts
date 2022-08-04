@@ -2,6 +2,7 @@ import { AnimationType, IPositionElement, IRace } from '../../types/irace';
 import { DistanceType, ICar } from '../../types/types';
 import { store } from '../utils/stor';
 import { API } from './api';
+import { winnerState } from './winnerState';
 
 class RaceState {
   private api = new API();
@@ -56,7 +57,9 @@ class RaceState {
           .sort((a: IRace, b: IRace) => a.time - b.time)[0];
         return winner;
       })
-      .then((data) => console.log(data));
+      .then((data: IRace) => {
+        winnerState.findWinner(data);
+      });
   };
 
   public resetRace = async (): Promise<void> => {

@@ -1,4 +1,5 @@
 import { AnimationType } from './irace';
+import { WinnerType } from './iwinner';
 import { ICar } from './types';
 
 export interface IStore {
@@ -12,4 +13,5 @@ export interface IStore {
   isRace: boolean;
   animation: AnimationType[];
   carsAtRace: HTMLElement[];
+  newWinner: WinnerType;
 }

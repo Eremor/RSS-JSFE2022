@@ -43,6 +43,11 @@ export class App {
       action: 'update garage',
       callback: this.garage.draw,
     });
+
+    observer.subscribe({
+      action: 'show winner',
+      callback: this.showWinner,
+    });
   };
 
   private drawGaragePage = (parentElement: HTMLElement): void => {
@@ -53,5 +58,9 @@ export class App {
   private drawWinnersPage = (parentElement: HTMLElement): void => {
     this.winners.draw();
     parentElement.append(this.winners.node);
+  };
+
+  private showWinner = (): void => {
+    console.log('show winner');
   };
 }

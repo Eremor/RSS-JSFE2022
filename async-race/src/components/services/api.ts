@@ -1,4 +1,5 @@
 import { IDriving, RaceType } from '../../types/irace';
+import { IWinner, ResponseWinnerType } from '../../types/iwinner';
 import { GetCarsType, ICar } from '../../types/types';
 
 export class API {
@@ -6,7 +7,7 @@ export class API {
 
   private garage = `${this.baseURL}/garage`;
 
-  // private winners = `${this.baseURL}/winners`;
+  private winners = `${this.baseURL}/winners`;
 
   private engine = `${this.baseURL}/engine`;
 
@@ -82,5 +83,35 @@ export class API {
     if (res.status === 500) console.error(`Oops!! The car with id="${id}" has a broken engine`);
 
     return res.status !== 200 ? { success: false } : { success: true };
+  };
+
+  public createWinner = async (winner: IWinner): Promise<void> => {
+    await fetch(this.winners, {
+      method: 'POST',
+      body: JSON.stringify(winner),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+  };
+
+  public updateWinner = async (winner: IWinner): Promise<void> => {
+    const { id } = winner;
+    const requestUrl = `${this.winners}/${id}`;
+    await fetch(requestUrl, {
+      method: 'PUT',
+      body: JSON.stringify(winner),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+  };
+
+  public getWinner = async (id: number): Promise<ResponseWinnerType> => {
+    const res = await fetch(`${this.winners}/${id}`);
+
+    const winner: IWinner = await res.json();
+    const { status } = res;
+    return { winner, status };
   };
 }

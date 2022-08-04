@@ -17,4 +17,8 @@ export const store: IStore = {
   isRace: false,
   animation: [],
   carsAtRace: [],
+  newWinner: {
+    name: '',
+    time: 0,
+  },
 };
