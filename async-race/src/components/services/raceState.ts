@@ -105,7 +105,7 @@ class RaceState {
       }
     };
     state.id = window.requestAnimationFrame(stepAnimation);
-    console.log({ state, car, distance, animationTime });
+
     return state;
   };
 

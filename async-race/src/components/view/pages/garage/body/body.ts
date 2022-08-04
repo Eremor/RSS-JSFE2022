@@ -26,6 +26,7 @@ export class Body extends BaseComponent<HTMLDivElement> {
   };
 
   private drawCars = (parent: HTMLElement): void => {
+    store.carsAtRace = [];
     store.cars.forEach((car: ICar) => {
       const carItem = new Car(car);
       carItem.draw();
