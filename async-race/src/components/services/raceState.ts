@@ -20,6 +20,19 @@ class RaceState {
     return { success, id, time };
   };
 
+  public stopEngine = async (id: number, distanceRoad: DistanceType): Promise<void> => {
+    const { car } = distanceRoad;
+
+    await this.api.stopCarEngine(id);
+
+    const transform = `transform: translate(0)`;
+    car.setAttribute('style', `${transform}`);
+
+    if (store.animation[id]) {
+      window.cancelAnimationFrame(store.animation[id].id);
+    }
+  };
+
   private getPosition = (element: HTMLElement): IPositionElement => {
     const { top, left, width, height } = element.getBoundingClientRect();
 

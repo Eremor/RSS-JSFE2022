@@ -44,6 +44,7 @@ export class Engine extends BaseComponent<HTMLDivElement> {
     console.log('stop engine');
     store.isActiveEngine = false;
     this.isDisabled(store.isActiveEngine);
+    raceState.stopEngine(this.id, this.distance);
   };
 
   private isDisabled = (isActive: boolean): void => {
