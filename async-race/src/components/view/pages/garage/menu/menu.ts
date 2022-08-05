@@ -26,6 +26,11 @@ export class Menu extends BaseComponent<HTMLDivElement> {
 
     this.createCarForm.onSubmit(this.createCar);
     this.updateCarForm.onSubmit(this.updateCar);
+
+    observer.subscribe({
+      action: 'update control race',
+      callback: control.draw,
+    });
   };
 
   private createCar = () => {

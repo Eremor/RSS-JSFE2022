@@ -15,6 +15,7 @@ export const store: IStore = {
   isSelected: false,
   isActiveEngine: false,
   isRace: false,
+  isFinish: false,
   animation: [],
   carsAtRace: [],
   newWinner: {

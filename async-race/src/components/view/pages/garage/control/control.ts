@@ -27,27 +27,30 @@ export class Control extends BaseComponent<HTMLDivElement> {
     this.startRaceButton.onClick(this.startRace);
     this.resetRaceButton.onClick(this.resetRace);
     this.generateCarsButton.onClick(this.generateCars);
+
+    this.isDisabled(store.isRace, this.startRaceButton);
+    this.isDisabled(!store.isFinish, this.resetRaceButton);
   };
 
   private startRace = () => {
     store.isRace = true;
-    this.isDisabled(store.isRace);
+    this.isDisabled(store.isRace, this.startRaceButton);
     raceState.race();
   };
 
   private resetRace = () => {
     store.isRace = false;
-    this.isDisabled(store.isRace);
+    store.isFinish = false;
+    this.isDisabled(!store.isFinish, this.resetRaceButton);
+    this.isDisabled(store.isRace, this.startRaceButton);
     raceState.resetRace();
   };
 
-  private isDisabled = (isActive: boolean): void => {
+  private isDisabled = (isActive: boolean, button: Button): void => {
     if (isActive) {
-      this.disabledButton(this.startRaceButton.node);
-      this.activeButton(this.resetRaceButton.node);
+      this.disabledButton(button.node);
     } else {
-      this.activeButton(this.startRaceButton.node);
-      this.disabledButton(this.resetRaceButton.node);
+      this.activeButton(button.node);
     }
   };
 

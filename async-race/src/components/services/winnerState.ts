@@ -39,6 +39,8 @@ class WinnerState {
     };
 
     observer.notify('show winner');
+    store.isFinish = true;
+    observer.notify('update control race');
   };
 }
 

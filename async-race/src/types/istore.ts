@@ -11,6 +11,7 @@ export interface IStore {
   isSelected: boolean;
   isActiveEngine: boolean;
   isRace: boolean;
+  isFinish: boolean;
   animation: AnimationType[];
   carsAtRace: HTMLElement[];
   newWinner: WinnerType;
