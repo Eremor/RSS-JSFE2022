@@ -13,3 +13,14 @@ export type WinnerType = {
   name: string;
   time: number;
 };
+
+export interface IWinnerItem extends IWinner {
+  position: number;
+  color: string;
+  name: string;
+}
+
+export type GetWinnersType = {
+  winners: IWinner[];
+  count: number;
+};

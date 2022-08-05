@@ -13,6 +13,7 @@ class WinnerState {
 
     await this.saveWinner(id, formattedTime);
     await this.showWinner(id, formattedTime);
+    await this.updateWinners();
   };
 
   private saveWinner = async (id: number, time: number): Promise<void> => {
@@ -41,6 +42,21 @@ class WinnerState {
     observer.notify('show winner');
     store.isFinish = true;
     observer.notify('update control race');
+  };
+
+  public findWinnerCar = async (id: number): Promise<void> => {
+    const car: ICar = await this.api.getCar(id);
+    store.findWinnerCar = car;
+  };
+
+  public updateWinners = async (): Promise<void> => {
+    const { sortBy, order } = store.sort;
+    const { winners, count } = await this.api.getWinners(store.winnersPage, sortBy, order);
+
+    store.winners = winners;
+    store.winnersCount = count;
+
+    observer.notify('update winners');
   };
 }
 

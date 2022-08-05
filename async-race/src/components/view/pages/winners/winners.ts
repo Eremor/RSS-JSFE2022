@@ -1,4 +1,8 @@
+import { store } from '../../../utils/stor';
 import { BaseComponent } from '../../baseComponent';
+import { Pagination } from '../../shared/pagination/pagination';
+import { Container } from './container/container';
+import './winners.scss';
 
 export class WinnersPage extends BaseComponent<HTMLElement> {
   constructor() {
@@ -8,9 +12,12 @@ export class WinnersPage extends BaseComponent<HTMLElement> {
   public draw = (): void => {
     this.node.innerHTML = '';
 
-    const title: HTMLElement = document.createElement('h2');
-    title.textContent = 'Winners page';
+    const container = new Container();
+    container.draw();
 
-    this.node.append(title);
+    const pagination = new Pagination(store.winnersPage, store.winnersCount, 10);
+    pagination.draw();
+
+    this.node.append(container.node, pagination.node);
   };
 }

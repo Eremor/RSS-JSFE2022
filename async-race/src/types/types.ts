@@ -1,5 +1,3 @@
-import { CarImage } from '../components/view/car/car-image/image';
-
 export interface IRout {
   name: string;
   onDraw: () => void;

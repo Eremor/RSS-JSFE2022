@@ -1,6 +1,12 @@
 import { AnimationType } from './irace';
-import { WinnerType } from './iwinner';
+import { IWinner, WinnerType } from './iwinner';
 import { ICar } from './types';
+
+type SortType = {
+  sortBy: string;
+  order: string;
+  isDuplicated: boolean;
+};
 
 export interface IStore {
   garagePage: number;
@@ -14,5 +20,10 @@ export interface IStore {
   isFinish: boolean;
   animation: AnimationType[];
   carsAtRace: HTMLElement[];
+  winnersPage: number;
+  winners: IWinner[];
+  winnersCount: number;
   newWinner: WinnerType;
+  findWinnerCar: ICar;
+  sort: SortType;
 }

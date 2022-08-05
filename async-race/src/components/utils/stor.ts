@@ -22,4 +22,16 @@ export const store: IStore = {
     name: '',
     time: 0,
   },
+  winnersPage: 1,
+  winners: [],
+  winnersCount: 1,
+  findWinnerCar: {
+    name: '',
+    color: '',
+  },
+  sort: {
+    sortBy: 'id',
+    order: 'ASC',
+    isDuplicated: false,
+  },
 };

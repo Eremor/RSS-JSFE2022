@@ -1,5 +1,5 @@
 import { IDriving, RaceType } from '../../types/irace';
-import { IWinner, ResponseWinnerType } from '../../types/iwinner';
+import { GetWinnersType, IWinner, ResponseWinnerType } from '../../types/iwinner';
 import { GetCarsType, ICar } from '../../types/types';
 
 export class API {
@@ -113,5 +113,22 @@ export class API {
     const winner: IWinner = await res.json();
     const { status } = res;
     return { winner, status };
+  };
+
+  public getWinners = async (
+    page: number,
+    sort: string,
+    order: string,
+    limit = 10,
+  ): Promise<GetWinnersType> => {
+    const requestUrl = `${this.winners}?_page=${page}&_limit=${limit}&_sort=${sort}&_order=${order}`;
+    const res = await fetch(requestUrl, {
+      method: 'GET',
+    });
+
+    return {
+      winners: await res.json(),
+      count: +(<string>res.headers.get('X-Total-Count')),
+    };
   };
 }

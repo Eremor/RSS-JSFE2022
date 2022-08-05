@@ -1,4 +1,6 @@
 import { garageState } from '../../../services/garageState';
+import { winnerState } from '../../../services/winnerState';
+// import { observer } from '../../../utils/observer';
 import { store } from '../../../utils/stor';
 import { BaseComponent } from '../../baseComponent';
 import { Button } from '../button/button';
@@ -71,6 +73,11 @@ export class Pagination extends BaseComponent<HTMLDivElement> {
     if (this.elementPerPage === 7) {
       store.garagePage = page;
       garageState.updateCars(page);
+    }
+    if (this.elementPerPage === 10) {
+      store.winnersPage = page;
+      winnerState.updateWinners();
+      // observer.notify('update winners');
     }
   };
 }
