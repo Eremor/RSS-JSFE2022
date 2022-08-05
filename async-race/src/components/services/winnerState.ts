@@ -58,6 +58,11 @@ class WinnerState {
 
     observer.notify('update winners');
   };
+
+  public deleteWinner = async (id: number): Promise<void> => {
+    await this.api.deleteWinner(id);
+    this.updateWinners();
+  };
 }
 
 export const winnerState = new WinnerState();

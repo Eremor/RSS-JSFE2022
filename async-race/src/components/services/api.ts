@@ -131,4 +131,14 @@ export class API {
       count: +(<string>res.headers.get('X-Total-Count')),
     };
   };
+
+  public deleteWinner = async (id: number): Promise<void> => {
+    const { status } = await this.getWinner(id);
+
+    if (status === 200) {
+      await fetch(`${this.winners}/${id}`, {
+        method: 'DELETE',
+      });
+    }
+  };
 }

@@ -1,5 +1,6 @@
 import { ICar } from '../../../../types/types';
 import { garageState } from '../../../services/garageState';
+import { winnerState } from '../../../services/winnerState';
 import { observer } from '../../../utils/observer';
 import { store } from '../../../utils/stor';
 import { BaseComponent } from '../../baseComponent';
@@ -43,5 +44,6 @@ export class CarControl extends BaseComponent<HTMLDivElement> {
     };
     store.isSelected = false;
     garageState.deleteCar(this.id);
+    winnerState.deleteWinner(this.id);
   };
 }
