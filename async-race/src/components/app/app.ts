@@ -2,7 +2,6 @@ import { IRout } from '../../types/types';
 import { garageState } from '../services/garageState';
 import { Router } from '../services/router';
 import { winnerState } from '../services/winnerState';
-// import { winnerState } from '../services/winnerState';
 import { observer } from '../utils/observer';
 import { getRouting } from '../utils/routing';
 import { store } from '../utils/stor';
@@ -64,7 +63,6 @@ export class App {
   };
 
   private drawWinnersPage = (parentElement: HTMLElement): void => {
-    // winnerState.updateWinners();
     this.winners.draw();
     parentElement.append(this.winners.node);
   };

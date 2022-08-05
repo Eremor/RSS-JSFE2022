@@ -20,10 +20,11 @@ export class BodyTable extends BaseComponent<HTMLUListElement> {
       const { id, time, wins } = winner;
       await winnerState.findWinnerCar(id);
       const { name, color } = store.findWinnerCar;
+      const position = i + 1 + (store.winnersPage - 1) * 10;
 
       const winnerValue: IWinnerItem = {
         id,
-        position: i + 1,
+        position,
         color,
         name,
         time,

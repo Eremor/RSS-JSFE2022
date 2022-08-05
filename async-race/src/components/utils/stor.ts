@@ -30,7 +30,7 @@ export const store: IStore = {
     color: '',
   },
   sort: {
-    sortBy: 'id',
+    sortBy: '',
     order: 'ASC',
     isDuplicated: false,
   },
