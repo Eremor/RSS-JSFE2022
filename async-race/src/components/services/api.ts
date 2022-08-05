@@ -1,6 +1,7 @@
 import { IDriving, RaceType } from '../../types/irace';
 import { GetWinnersType, IWinner, ResponseWinnerType } from '../../types/iwinner';
 import { GetCarsType, ICar } from '../../types/types';
+import { CARS_PER_PAGE, WINNERS_PER_PAGE } from '../utils/constants';
 
 export class API {
   private baseURL = 'http://127.0.0.1:3000';
@@ -11,7 +12,7 @@ export class API {
 
   private engine = `${this.baseURL}/engine`;
 
-  public getCars = async (page: number, limit = 7): Promise<GetCarsType> => {
+  public getCars = async (page: number, limit = CARS_PER_PAGE): Promise<GetCarsType> => {
     const res = await fetch(`${this.garage}?_page=${page}&_limit=${limit}`);
 
     return {
@@ -119,7 +120,7 @@ export class API {
     page: number,
     sort: string,
     order: string,
-    limit = 10,
+    limit = WINNERS_PER_PAGE,
   ): Promise<GetWinnersType> => {
     const requestUrl = `${this.winners}?_page=${page}&_limit=${limit}&_sort=${sort}&_order=${order}`;
     const res = await fetch(requestUrl, {
