@@ -14,7 +14,200 @@
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
 	<body>
-		
+		<div class="reveal">
+			<div class="slides">
+				<section>
+          <h2>React Native</h2>
+          <span class="fragment fade-in">
+            React Native is a framework for developing cross-platform iOS and Android apps:
+            <ul>
+              <li class="list-item fragment fade-in">
+                • appeared in early 2015
+              </li>
+              <li class="list-item fragment fade-in">
+                • built on top of React
+              </li>
+              <li class="list-item fragment fade-in">
+                • does not use WebView and HTML technologies
+              </li>
+              <li class="list-item fragment fade-in">
+                • native components are bound in JS and wrapped in React
+              </li>
+          </span>
+        </section>
+        <section>
+          <h2>Advantages</h2>
+          <ol>
+            <li class="fragment fade-up">1. Cross-platform development</li>
+            <li class="fragment fade-up">2. Mastering React</li>
+            <li class="fragment fade-up">3. Build time is faster than Android Studio</li>
+            <li class="fragment fade-up">4. JavaScript is convenient for transferring data over the network</li>
+            <li class="fragment fade-up">5. UI development</li>
+          </ol>
+        </section>
+        <section>
+          <h2>What does the application consist of?</h2>
+          <ul class="m-center">
+            <li class="fragment fade-up">there are no usual div, span, button, input, etc.</li>
+            <li class="fragment fade-up">no familiar CSS</li>
+            <li class="fragment fade-up">no DOM</li>
+          </ul>
+        </section>
+        <section>
+          <h2 class="r-fit-text">What is there?</h2>
+        </section>
+        <section>
+          <section>
+            <h3>Components</h3>
+          </section>
+          <section>
+            <p>The application is built from platform components - these are native modules wrapped in React components</p>
+            <ul>
+              <li class="fragment fade-up">•	There are cross-platform: View, Text, Image, Picker, ...</li>
+              <li class="fragment fade-up">•	There are iOS specific ones: TabBarIOS, ActionSheetIOS, ...</li>
+              <li class="fragment fade-up">•	There are Android specific ones: BackAndroid, ToolbarAndroid, ...</li>
+            </ul>
+          </section>
+          <section>
+            <pre><code data-line-numbers="4-7|8-10|11-14" class="small-text">
+              render() {
+                return(
+                  &lt;View style={styles.container}&gt;
+                    &lt;TouchableOpacity onPress={this.props.onPress}&gt;
+                      &lt;Image source={require('../icons/close.png')}
+                        resizeMode="cover"/&gt;
+                    &lt;/TouchableOpacity&gt;
+                    &lt;Text style={styles.placeText} numberOfLines={1}&gt;
+                      {myText.join(', ')}
+                    &lt;/Text&gt;
+                    &lt;ScrollView keyboardDismissMode="on-drag"
+                      refreshControl={&lt;RefreshControl/&gt;}/&gt;
+                      {this.props.children}
+                    &lt;/ScrollView&gt;
+                  &lt;/View&gt;
+                )
+              }
+            </code></pre>
+          </section>
+          <section>
+            <pre><code data-line-numbers="4-7|8-10|11-14" class="small-text">
+              render() {
+                return(
+                  &lt;View style={styles.container}&gt;
+                    &lt;TextInput
+                            autoCapitalize="sentences"
+                            keyboardType="email-address"
+                            maxLength={500}
+                            multiline={true}
+                            placeholder="Enter comment..."
+                            style={styles.miInput}
+                            onSelectionChange={this._onSelectionChange}
+                            onSubmitEditing={this._onSubmitEditing}
+                            onChangeText={this._onChangeText}
+                            textProcessor={this._textProcessor}
+                    /&gt;
+                  &lt;/View&gt;
+                )
+              }
+            </code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>CSS is not real - it is polyfill</h3>
+          </section>
+          <section>
+            <ul>
+              <li>•	Layout with absolute values, no relative values</li>
+              <li class="fragment fade-up">•	There is a limited implementation of flexbox properties for layout</li>
+              <li class="fragment fade-up">•	Full support for CSSx will never be, it is not needed</li>
+              <li class="fragment fade-up">•	In total, about 70 properties have been implemented, in fact, there are enough of them; there is always SVG just in case.</li>
+            </ul>
+          </section>
+          <section>
+            <pre><code data-line-numbers="4-7|8-10|11-14" class="small-text">
+              const styles = StyleSheet.create({
+                default: {
+                  fontSize: PixelRation.getPixelSizeForLayoutSize(7),
+                  color: 'rgba(0, 0, 0, 0.60)'
+                },
+                suggestUser: {
+                  height: PixelRation.getPixelSizeForLayoutSize(200),
+
+                  backgroundColor: '#FFF',
+                  shadowColor: '#000',
+                  shadowOffset: {
+                    height: -5
+                  },
+                  shadowRadius: 5,
+                  shadowOpacity: 0.5
+                }
+              })
+            </code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>Navigation</h3>
+          </section>
+          <section>
+            <p>Has a number of problems:</p>
+            <img class="fragment" data-fragment-index="0" src="https://habrastorage.org/files/953/bf0/98d/953bf098d67848f180a55795c71c721d.png" width="450" height="300">
+          </section>
+          <section>
+            <ul>
+              <li>•	imperative API (methods) for managing</li>
+              <li class="fragment fade-up">•	You need to immediately think about the interaction with the Navigator</li>
+              <li class="fragment fade-up">•	Animations and gestures are difficult to control</li>
+              <li class="fragment fade-up">•	NavigatorBar is completely detached from the general life</li>
+              <li class="fragment fade-up">•	After designing several screens, you will start to experience pain</li>
+            </ul>
+          </section>
+          <section>
+            <p>Much of the problem is solved with redux.</p>
+            <img class="fragment" data-fragment-index="0" src="https://habrastorage.org/files/65a/982/0ec/65a9820ec19b4538bc0f42f13ad38fed.png" width="450" height="300">
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>Animations</h3>
+          </section>
+          <section>
+            <ul>
+              <li>•	Implemented through a special component Animated</li>
+              <li class="fragment fade-up">•	There is &lt;Animated.View&gt;, &lt;Animated.Image&gt;, &lt;Animated.Text&gt;</li>
+              <li class="fragment fade-up">•	Work outside of React, directly updating native components</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>Native modules</h3>
+          </section>
+          <section>
+            <p>React Native implements the basics, but not all. If there is no module:</p>
+            <ul>
+              <li class="fragment fade-up">•	Look for a component in UIExplorer (React Native demo application)</li>
+              <li class="fragment fade-up">•	Find the correct module name in OS terms</li>
+              <li class="fragment fade-up">•	Search in the source texts, perhaps it is undocumented (how to make a photo, SVG)</li>
+              <li class="fragment fade-up">•	js.coach/react-native - plugins for React Native</li>
+              <li class="fragment fade-up">•	Give preference to native implementation over JS</li>
+            </ul>
+          </section>
+        </section>
+				<section>
+          <h2>conclusions</h2>
+          <ul>
+            <li class="fragment fade-up">•	Knowledge of React and JavaScript will open the way to the world of mobile development</li>
+            <li class="fragment fade-up">•	Fairly fast build applications</li>
+            <li class="fragment fade-up">•	Large community and support from Facebook</li>
+          </ul>
+        </section>
+        <section>
+          <h2 class="r-fit-text">Thanks for watching</h2>
+        </section>
+			</div>
+		</div>
 
 		<script src="./dist/reveal.js"></script>
 		<script src="./plugin/notes/notes.js"></script>
