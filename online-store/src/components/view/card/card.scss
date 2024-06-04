@@ -1,0 +1,107 @@
+@import '../../../styles/colors';
+@import '../../../styles/fonts';
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    .card__overflow {
+      opacity: 1;
+    }
+  }
+
+  &--active {
+    .card__title::after {
+      position: absolute;
+      right: -25px;
+      bottom: 2px;
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: url('../../../assets/icons/cart.svg') center no-repeat;
+      filter: invert(9%) sepia(92%) saturate(5128%) hue-rotate(213deg) brightness(98%) contrast(107%);
+    }
+  }
+
+  &__img {
+    width: 300px;
+    height: 175px;
+    border-radius: 5px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+
+  &__overflow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 175px;
+    background-color: #00000060;
+    border-radius: 5px;
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  &__btn {
+    width: 50px;
+    height: 50px;
+    background-color: $secondary-color;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: url('../../../assets/icons/search.svg') center no-repeat;
+      background-size: 70%;
+    }
+  }
+
+  &__content {
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+  }
+
+  &__price {
+    @include logo-font;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    letter-spacing: 1px;
+    color: $primary-color;
+    opacity: 0.9;
+  }
+
+  &__not-found {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    color: $font-color;
+  }
+}

@@ -1,0 +1,380 @@
+@import 'colors';
+@import 'fonts';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  @include main-font;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+
+  @media screen and (max-width: 1240px) {
+    width: 90%;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.btn {
+  padding: 0;
+  display: block;
+  font-family: inherit;
+  border: none;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__title {
+    margin: 0;
+    margin-bottom: 15px;
+    padding: 0;
+    @include logo-font;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2rem;
+  }
+
+  &__query {
+    margin-bottom: 25px;
+  }
+
+  &__category {
+    margin-bottom: 25px;
+  }
+
+  &__company {
+    margin-bottom: 25px;
+  }
+
+  &__colors {
+    margin-bottom: 25px;
+  }
+
+  &__price {
+    margin-bottom: 25px;
+  }
+
+  &__year {
+    margin-bottom: 35px;
+  }
+
+  &__popular {
+    margin-bottom: 35px;
+  }
+
+  &__btn {
+    padding: 5px 10px;
+    @include logo-font;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    letter-spacing: 1px;
+    color: $secondary-color;
+    background-color: $primary-color;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      color: $primary-color;
+      background-color: $secondary-color;
+    }
+  }
+}
+
+.query {
+  position: relative;
+  width: 189px;
+
+  &__input {
+    padding: 10px 10px;
+    padding-right: 30px;
+    width: 100%;
+    @include main-font;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    color: $font-color;
+    background-color: $filter-color;
+    border: transparent;
+    border-radius: 5px;
+
+    &::placeholder {
+      color: $font-color;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: 10px;
+    right: 7px;
+    width: 20px;
+    height: 20px;
+    background: url('../assets/icons/cancel.svg') center no-repeat;
+    background-size: contain;
+  }
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    display: flex;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    color: $font-color;
+    text-transform: capitalize;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    transition: 0.3s;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      opacity: 0.9;
+      color: $primary-color;
+    }
+
+    &--active {
+      padding-bottom: 3px;
+      font-weight: 700;
+      color: $primary-color;
+    }
+  }
+}
+
+.company {
+  display: flex;
+  flex-direction: column;
+
+  &__list {
+    padding: 5px;
+    @include main-font;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    color: $font-color;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: $filter-color;
+  }
+
+  &__item {
+    @include main-font;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    color: $font-color;
+  }
+}
+
+.colors {
+  display: flex;
+  flex-direction: column;
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    margin-right: 7px;
+    @include main-font;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    color: $font-color;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 0.7;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &--text {
+      &-active {
+        font-weight: 700;
+        color: $primary-color;
+        opacity: 1;
+      }
+    }
+
+    &--circle {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+
+      &:nth-child(2) {
+        background-color: #ff0000;
+      }
+
+      &:nth-child(3) {
+        background-color: #00ff00;
+      }
+
+      &:nth-child(4) {
+        background-color: #0000ff;
+      }
+
+      &:nth-child(5) {
+        background-color: #000000;
+      }
+
+      &:last-child {
+        background-color: #ffb900;
+      }
+
+      &-active {
+        opacity: 1;
+        position: relative;
+
+        &::before {
+          position: absolute;
+          content: '';
+          top: 3px;
+          left: 3px;
+          display: block;
+          width: 10px;
+          height: 10px;
+          background: url('../assets/icons/check-mark.svg') center no-repeat;
+          background-size: contain;
+        }
+      }
+    }
+  }
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+  }
+
+  &__cost {
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    color: $primary-color;
+  }
+}
+
+.year {
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+  }
+
+  &__cost {
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    color: $primary-color;
+  }
+}
+
+.popular {
+  display: flex;
+  flex-direction: column;
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    position: relative;
+    padding-left: 25px;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    color: $font-color;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      content: '';
+      display: block;
+      width: 15px;
+      height: 15px;
+      border: 2px solid $primary-color;
+      border-radius: 5px;
+    }
+
+    &--active {
+      &::before {
+        background-color: $primary-color;
+      }
+
+      &::after {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        content: '';
+        display: block;
+        width: 15px;
+        height: 15px;
+        background: url('../assets/icons/check-mark.svg') center no-repeat;
+      }
+    }
+  }
+}

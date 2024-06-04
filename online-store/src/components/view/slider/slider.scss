@@ -1,0 +1,28 @@
+@import '../../../styles/colors';
+
+.noUi-horizontal {
+  height: 10px;
+}
+
+.noUi-touch-area {
+  background: $primary-color;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.noUi-connect {
+  background: $secondary-color;
+}
+
+.noUi-origin .noUi-handle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.noUi-handle::before,
+.noUi-handle::after {
+  display: none;
+}
