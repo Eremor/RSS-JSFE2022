@@ -1,0 +1,42 @@
+.source__alphabet {
+  margin: 10px 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.letter {
+  margin: 0 5px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.letter:hover,
+.letter:focus {
+  color: #69db7e;
+  transform: translateY(-0.15em);
+}
+
+.source__content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 530px) {
+  .source__alphabet {
+    width: 257px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .source__content {
+    flex-direction: column;
+  }
+}
