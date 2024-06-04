@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shelter pets</title>
+  <link rel="stylesheet" href="../normalize.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__wrapper wrapper">
+      <a class="header__logo logo" href="../main/index.html">
+        <h1 class="logo__title">Cozy house</h1>
+        <p class="logo__subtitle">Shelter for pets in Boston</p>
+      </a>
+      <div class="header__burger burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="header__nav nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="../main/index.html">About the shelter</a></li>
+          <li class="nav__item nav__item--active"><a class="nav__link" href="">Our pets</a></li>
+          <li class="nav__item"><a class="nav__link" href="../main/index.html#help">Help the shelter</a></li>
+          <li class="nav__item"><a class="nav__link" href="#contacts">Contacts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="friends">
+      <div class="friends__wrapper wrapper">
+        <h2 class="friends__title section-title">Our friends who<br>are looking for a house</h2>
+        <div class="friends__list">
+          <div class="friends__content"></div>
+        </div>
+        <div class="friends__pagination pagination">
+          <button class="pagination__btn btn btn--outline btn--disabled" data-arrow="start"></button>
+          <button class="pagination__btn btn btn--outline btn--disabled" data-arrow="prev"></button>
+          <button class="pagination__btn btn btn--number">1</button>
+          <button class="pagination__btn btn btn--outline" data-arrow="next"></button>
+          <button class="pagination__btn btn btn--outline" data-arrow="end"></button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" id="contacts">
+    <div class="footer__wrapper wrapper">
+      <div class="footer__contacts">
+        <h2 class="footer__title section-title">For questions and suggestions</h2>
+        <a class="footer__contact footer__contact--mail" href="mailto:email@shelter.com">email@shelter.com</a>
+        <a class="footer__contact footer__contact--phone" href="tel:+136745677554">+13 674 567 75 54</a>
+      </div>
+      <div class="footer__location">
+        <h2 class="footer__title section-title">We are waiting for your visit</h2>
+        <a class="footer__contact footer__contact--location footer__contact--first-local" href="https://goo.gl/maps/oEKXvfDTtGucqt1c7" target="_blank">1 Central Street, Boston (entrance from the store)</a>
+        <a class="footer__contact footer__contact--location" href="https://goo.gl/maps/yN3kDC3CtaMVtKj36" target="_blank">18 South Park, London</a>
+      </div>
+      <div class="footer__image">
+        <img src="../../assets/images/footer-puppy.png" alt="Puppy">
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
