@@ -1,0 +1,15 @@
+.road {
+  display: flex;
+  align-items: center;
+  height: 60px;
+
+  &__flag {
+    position: absolute;
+    bottom: 1px;
+    right: 90px;
+    display: block;
+    width: 35px;
+    height: 35px;
+    background: url('../../../../assets/flag.svg') center no-repeat;
+  }
+}

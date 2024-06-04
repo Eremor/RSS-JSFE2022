@@ -1,0 +1,87 @@
+@import '../../../../../styles/colors';
+
+.table {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  width: 650px;
+
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr 2fr;
+    align-items: center;
+    justify-items: center;
+    background-color: $secondary-color;
+  }
+
+  &__col {
+    margin: 5px 0;
+    padding: 7px 15px;
+    font-size: 1.4rem;
+    line-height: 1.6px;
+    font-weight: 300;
+    color: $font-light-color;
+
+    &--bg {
+      font-weight: 500;
+      color: $background-color;
+    }
+
+    &--car {
+      position: relative;
+      top: -23px;
+      left: -32px;
+      height: 30px;
+      width: 35px;
+
+      & svg {
+        height: 55px;
+        width: 75px;
+      }
+    }
+
+    &--btn {
+      padding: 5px;
+      padding-right: 30px;
+      text-transform: none;
+      background-color: transparent;
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr 2fr;
+    align-items: center;
+    justify-items: center;
+  }
+}
+
+.active {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 12px;
+    content: '';
+    width: 7px;
+    height: 12px;
+    background: url('../../../../../assets/arrow.svg') center no-repeat;
+    background-size: cover;
+  }
+}
+
+.active-reverse {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 12px;
+    content: '';
+    width: 7px;
+    height: 12px;
+    background: url('../../../../../assets/arrow.svg') center no-repeat;
+    background-size: cover;
+    transform: rotate(180deg);
+  }
+}

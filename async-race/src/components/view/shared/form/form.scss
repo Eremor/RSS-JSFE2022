@@ -1,0 +1,30 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/fonts';
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__name {
+    padding: 4px 10px;
+    @include main-font;
+    outline: none;
+    border: none;
+
+    &:active {
+      outline: none;
+    }
+  }
+
+  &__color {
+    appearance: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  &--disabled {
+    cursor: default;
+    background-color: $disabled-color;
+  }
+}

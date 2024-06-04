@@ -1,0 +1,44 @@
+@import '../../../../styles/colors';
+
+.btn {
+  padding: 5px 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+
+  &--primary {
+    background-color: $primary-color;
+
+    &:hover {
+      background-color: $primary-hover-color;
+    }
+  }
+
+  &--light {
+    background-color: $secondary-color;
+
+    &:hover {
+      background-color: $secondary-hover-color;
+    }
+  }
+
+  &--disabled {
+    background-color: $disabled-color;
+    cursor: default;
+
+    &:hover {
+      background-color: $disabled-color;
+    }
+  }
+}
